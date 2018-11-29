@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>下载</title>
+    <!--<link rel="stylesheet" href="css/public.css">-->
+    <link rel="stylesheet" href="css/download.css">
+</head>
+<script>
+    +function () {
+        remLayout();
+        function remLayout() {
+            var w = document.documentElement.clientWidth;
+            w = w > 768 ? 768 : w;
+            w = w <= 320 ? 320 : w;
+            document.documentElement.style.fontSize = w / 7.5 + 'px';
+        }
+
+        window.addEventListener('resize', function () {
+            remLayout();
+        }, false);
+    }();
+</script>
+<body>
+<main class="main">
+    <section class="bg">
+        <section class="download">
+            <div class="common android" id="android"></div>
+            <div class="common ios" id="ios"></div>
+        </section>
+    </section>
+</main>
+
+
+<script src="js/zepto.min.js"></script>
+<script src="js/download.js"></script>
+</body>
+</html>
