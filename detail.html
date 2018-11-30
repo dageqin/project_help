@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>分享详情</title>
+    <link rel="stylesheet" href="css/detail.css">
+</head>
+<script>
+    + function() {
+        remLayout();
+        function remLayout() {
+            var w = document.documentElement.clientWidth;
+            w = w > 768 ? 768 : w;
+            w = w <= 320 ? 320 : w;
+            document.documentElement.style.fontSize = w / 7.5 + 'px';
+        }
+        window.addEventListener('resize', function() {
+            remLayout();
+        }, false);
+    }();
+</script>
+<body>
+<main class="main">
+    <section class="detail_header">
+        <img class="header_img" src="img/detail_header.png" alt="help_img">
+    </section>
+    <section class="detail_content">
+        <div class="same content_header">
+            <img class="header_photo" src="img/header_photo.png" alt="">
+            <div class="header_person">
+                <p class="person_name">学习雷锋（张培林）</p>
+                <span class="tag gender_age">
+                    <img class="tag_gender" src="img/sex.png" alt="gender">
+                    <strong class="tag_age">24</strong>
+                </span>
+                <span class="tag tag_desc city">杭州</span>
+                <span class="tag tag_desc job">设计师</span>
+                <span class="tag tag_desc evaluate">讲义气</span>
+            </div>
+        </div>
+        <div class="same aim">
+            <img class="aim_img" src="img/aim.png" alt="help_img">
+            <span class="aim_title">寻找杭州上城区铺面一间，求帮</span>
+        </div>
+        <div class="same content">
+            <p class="content_detail">我的公司寻租铺面一间，最好在上城区附近的，一楼临街商铺，面积200平米左右，通水电暖天然气，最好交通便利的，便于停车装卸货，门口人流量不大的，希望有一块空地，可以方便装车卸货，对环境要求不是很高，希望有呢个帮的上忙的朋友联系我，必有重谢！
+                <strong style="display: inline-block;float: right;color:#f6d744;">全文</strong>
+            </p>
+            <ul class="content_img">
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+                <li><img src="" alt=""></li>
+            </ul>
+            <img class="open_btn" src="img/open_btn.png" alt="展开">
+        </div>
+        <div class="same content_footer">
+
+        </div>
+    </section>
+    <section class="detail_footer">
+
+    </section>
+</main>
+</body>
+<script src="js/zepto.min.js"></script>
+</html>
