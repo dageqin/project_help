@@ -1,7 +1,7 @@
-@import "public.css";
+@import "pub/public.css";
 
 .main{
-    background: url("../img/main_download.png") no-repeat center center;
+    background: url("../images/main_download.png") no-repeat center center;
     background-size: 100% 100%;
     position: relative;
     border: 1px solid #979797;
@@ -28,10 +28,10 @@
 }
 .download .android{
     margin-bottom: 0.5rem;
-    background: url("../img/android_btn.png");
+    background: url("../images/android_btn.png");
     background-size: 100% 100%;
 }
 .download .ios{
-    background: url("../img/ios_btn.png");
+    background: url("../images/ios_btn.png");
     background-size: 100% 100%;
 }

@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title>注册</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <script>
-    + function() {
+    +function () {
         remLayout();
         function remLayout() {
             var w = document.documentElement.clientWidth;
@@ -14,15 +16,34 @@
             w = w <= 320 ? 320 : w;
             document.documentElement.style.fontSize = w / 7.5 + 'px';
         }
-        window.addEventListener('resize', function() {
+
+        window.addEventListener('resize', function () {
             remLayout();
         }, false);
     }();
 </script>
 <body>
 <main class="main">
-
+    <header class="login_header">
+        <img class="header_img" src="images/login_header.png" alt="">
+        <img class="header_font" src="images/help_font.png" alt="帮个忙">
+    </header>
+    <section class="login_content">
+        <form action="" method="get" autocomplete="on">
+            <i class="phone"></i>
+            <input id="phoneNum" class="num" type="number" name="phonenum" placeholder="请输入手机号">
+            <i class="vertify"></i>
+            <input id="vertifyNum" class="num" type="number" name="vertifynum" placeholder="请输入验证码">
+            <span class="get_gode" id="getCode">获取验证码</span>
+            <button type="submit" id="submit">前往帮忙</button>
+        </form>
+    </section>
+    <footer class="login_footer">
+        用帮忙加深情谊
+    </footer>
 </main>
 </body>
-<script src="js/zepto.min.js"></script>
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/ejs.min.js"></script>
+<script src="js/login.js"></script>
 </html>

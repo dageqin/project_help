@@ -1,4 +1,16 @@
-@import "public.css";
+@import "pub/public.css";
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    /*background: #f1f1f1;*/
+    color: #000;
+    text-align: center;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
 .detail_header {
     height: 5.26rem;
@@ -18,7 +30,7 @@
     top: 3.78rem;
     left: 0.3rem;
     width: 6.9rem;
-    height: 9.84rem;
+    min-height: 9.84rem;
     /*height:auto;*/
     background: #FFFFFF;
     box-shadow: 2px 2px 19px 0 rgba(153, 153, 153, 0.50);
@@ -50,10 +62,10 @@
 .detail_content .content_header .header_person {
     margin-left: 0.08rem;
     padding: 0.1rem;
+    text-align: left;
 }
 
 .detail_content .content_header .header_person .person_name {
-    font-family: PingFangSC-Regular;
     font-size: 0.32rem;
     color: #333333;
     height: 0.45rem;
@@ -77,7 +89,7 @@
     padding: 0 0.12rem;
 }
 
-/*gender-img，age*/
+/*gender-images，age*/
 .detail_content .content_header .header_person .gender_age {
     width: 0.72rem;
     height: 0.33rem;
@@ -85,7 +97,7 @@
     background-color: #56d8da;
 }
 
-/*gender-img*/
+/*gender-images*/
 .detail_content .content_header .header_person .gender_age .tag_gender {
     height: 90%;
     display: inline-block;
@@ -116,6 +128,8 @@
     padding-left: 0.26rem;
     height: 0.68rem;
     line-height: 0.68rem;
+    display: inline-block;
+    float: left;
 }
 
 /*detail*/
@@ -127,22 +141,35 @@
 .detail_content .content .content_detail {
     width: 100%;
     min-height: 2.74rem;
+    /*min-height: 1.4rem;*/
+    overflow: hidden;
     font-family: PingFangSC-Light;
     font-size: 0.3rem;
     color: #333333;
     line-height: 0.46rem;
+    text-align: left;
+}
+/*全文*/
+.detail_content .content .all_btn{
+    display: inline-block;
+    float: right;
+    color:#f6d744;
+    margin-top: -0.4rem;
+    font-size: 0.3rem;
 }
 
 .detail_content .content ul {
     width: 100%;
-    height: 1.94rem;
+    min-height: 1.94rem;
     margin: 0.4rem 0 0.2rem;
+    /*overflow: hidden;*/
 }
 
 .detail_content .content ul li {
     float: left;
     width: 1.94rem;
-    height: 100%;
+    height: 1.94rem;
+    /*height: 100%;*/
     margin: 0 0.06rem;
     background-color: #cccccc;
     display: inline-block;
@@ -151,7 +178,7 @@
 
 .detail_content .content ul li img {
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 /*展开按钮*/
@@ -161,10 +188,97 @@
     width: 0.28rem;
     height: 0.16rem;
     margin-right: 0.2rem;
+    /*transform: rotate(180deg);*/
 }
 
 /*位置时间等信息*/
 .detail_content .content_footer {
     border-bottom: none;
+    height: 0.3rem;
     /*border-top: 1px solid #E6E6E6;*/
+}
+
+.detail_content .content_footer .footer_img {
+    width: 0.22rem;
+    height: 0.22rem;
+}
+
+.detail_content .content_footer  .footer_font {
+    font-size: 0.22rem;
+    color: #999999;
+}
+.detail_content .content_footer .time_img,
+.detail_content .content_footer .trans_img{
+    margin-left:0.3rem;
+}
+.detail_content .content_footer .footer_left {
+    float: left;
+}
+.detail_content .content_footer .footer_right {
+    float: right;
+    margin-right: 0.5rem;
+}
+
+/*关系脉络*/
+.detail_footer{
+    position: relative;
+    top: 8.6rem;
+    left: 0;
+    padding: 0 0.6rem;
+    text-align: left;
+}
+.detail_footer p{
+    font-size: 0.28rem;
+    color: #666666;
+    line-height:0.4rem;
+}
+.detail_footer ul{
+    margin-top:0.2rem;
+    height: 0.84rem;
+}
+.detail_footer ul li{
+    float: left;
+    height: 0.84rem;
+    line-height:0.84rem;
+}
+.detail_footer ul .person img{
+    height: 0.64rem;
+    width: 0.64rem;
+}
+
+.detail_footer ul .person p{
+    font-size: 0.2rem;
+    color: #999999;
+    height: 0.2rem;
+    line-height:0.2rem;
+}
+/*箭头*/
+.detail_footer ul .arrow{
+}
+.detail_footer ul .arrow img{
+    width: 100%;
+    height: 100%;
+}
+/*一度*/
+.detail_footer ul .level{
+    float: right;
+}
+.detail_footer ul .level p{
+    width: 0.92rem;
+    height: 0.44rem;
+    line-height:0.44rem;
+    border-radius: 0.2rem;
+    border: 1px solid #fcdb40;
+    text-align: center;
+    padding: 0.01rem;
+}
+.detail_footer .help_btn{
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*justify-content: center;*/
+    background: url("../images/help_btn.png") no-repeat;
+    background-size: 100%;
+    width: 4.53rem;
+    height: 0.94rem;
+    margin: 1rem;
 }

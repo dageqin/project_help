@@ -1,18 +1,18 @@
-@import "reset.min.css";
+@import "./reset.min.css";
 
 html {
     font-size: 100px;
 }
 
 html, body {
-    width: 100%;
+    position: relative;
     height: 100%;
-    background: #EBF0F5;
+    width: 100%;
     overflow-x: hidden;
 }
-
 .main{
     margin: 0 auto;
     max-width: 7.5rem;
-    height: 100%;
+    font-family: Microsoft Yahei,SimSun,Helvetica;
 }
+

@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title>分享详情</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/pub/swiper.min.css">
     <link rel="stylesheet" href="css/detail.css">
 </head>
 <script>
-    + function() {
+    +function () {
         remLayout();
         function remLayout() {
             var w = document.documentElement.clientWidth;
@@ -15,53 +18,102 @@
             w = w <= 320 ? 320 : w;
             document.documentElement.style.fontSize = w / 7.5 + 'px';
         }
-        window.addEventListener('resize', function() {
+
+        window.addEventListener('resize', function () {
             remLayout();
         }, false);
     }();
 </script>
 <body>
-<main class="main">
-    <section class="detail_header">
-        <img class="header_img" src="img/detail_header.png" alt="help_img">
-    </section>
-    <section class="detail_content">
-        <div class="same content_header">
-            <img class="header_photo" src="img/header_photo.png" alt="">
-            <div class="header_person">
-                <p class="person_name">学习雷锋（张培林）</p>
-                <span class="tag gender_age">
-                    <img class="tag_gender" src="img/sex.png" alt="gender">
+<main class="main swiper-container swiper-container-h">
+    <div class="swiper-slide">
+        <header class="detail_header">
+            <img class="header_img" src="images/detail_header.png" alt="help_img">
+        </header>
+        <section id="content" class="detail_content">
+            <div class="same content_header">
+                <img class="header_photo" src="images/header_photo.png" alt="">
+                <div class="header_person">
+                    <p class="person_name">学习雷锋（张培林）</p>
+                    <span class="tag gender_age">
+                    <img class="tag_gender" src="images/sex.png" alt="gender">
                     <strong class="tag_age">24</strong>
-                </span>
-                <span class="tag tag_desc city">杭州</span>
-                <span class="tag tag_desc job">设计师</span>
-                <span class="tag tag_desc evaluate">讲义气</span>
+                    </span>
+                    <span class="tag tag_desc city">杭州</span>
+                    <span class="tag tag_desc job">设计师</span>
+                    <span class="tag tag_desc evaluate">讲义气</span>
+                </div>
             </div>
-        </div>
-        <div class="same aim">
-            <img class="aim_img" src="img/aim.png" alt="help_img">
-            <span class="aim_title">寻找杭州上城区铺面一间，求帮</span>
-        </div>
-        <div class="same content">
-            <p class="content_detail">我的公司寻租铺面一间，最好在上城区附近的，一楼临街商铺，面积200平米左右，通水电暖天然气，最好交通便利的，便于停车装卸货，门口人流量不大的，希望有一块空地，可以方便装车卸货，对环境要求不是很高，希望有呢个帮的上忙的朋友联系我，必有重谢！
-                <strong style="display: inline-block;float: right;color:#f6d744;">全文</strong>
-            </p>
-            <ul class="content_img">
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
-                <li><img src="" alt=""></li>
+            <div class="same aim">
+                <img class="aim_img" src="images/aim.png" alt="help_img">
+                <span class="aim_title">寻找杭州上城区铺面一间，求帮</span>
+            </div>
+            <div class="same content">
+                <p class="content_detail" id="contentDetail">
+                    <!--我的公司寻租铺面一间，最好在上城区附近的，一楼临街商铺，面积200平米左右，通水电暖天然气，最好交通便利的，便于停车装卸货，门口人流量不大的，希望有一块空地，可以方便装车卸货，对环境要求不是很高，希望有呢个帮的上忙的朋友联系我，必有重谢！对环境要求不是很高，希望有呢个帮的上忙的朋友联系我，必有重谢！对环境要求不是很高，希望有呢个帮的上忙的朋友联系我，必有重谢！-->
+                    <!--<i class="all_btn" id="allBtn">-->
+                    <!--<img src="images/all_btn.png" alt="全文">-->
+                    <!--</i>-->
+                </p>
+                <span class="all_btn" id="allBtn">全文</span>
+                <ul class="content_img" id="contentImg">
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                </ul>
+                <img id="imageOpen" class="open_btn" src="images/open_btn.png" alt="open">
+            </div>
+            <div class="same content_footer">
+                <div class="footer_left">
+                    <img class="footer_img city_img" src="images/city.png" alt="city">
+                    <span class="footer_font">杭州</span>
+                    <img class="footer_img time_img" src="images/time_btn.png" alt="time">
+                    <span class="footer_font">两天前</span>
+                </div>
+                <div class="footer_right">
+                    <img class="footer_img msg_img" src="images/msg_btn.png" alt="msg">
+                    <span class="footer_font">12</span>
+                    <img class="footer_img trans_img" src="images/trans_btn.png" alt="trans">
+                    <span class="footer_font">52</span>
+                </div>
+            </div>
+        </section>
+        <footer class="detail_footer" id="footer">
+            <p>关系脉络</p>
+            <ul>
+                <li class="person">
+                    <img src="images/header_photo.png" alt="images">
+                    <p>张培林</p>
+                </li>
+                <li clas="arrow" style="margin: 0 0.2rem;">
+                    <img src="images/arroow.png" alt="arrow">
+                </li>
+                <li class="person">
+                    <img src="images/header_photo.png" alt="images">
+                    <p>董海宁</p>
+                </li>
+                <li class="level">
+                    <p>一度</p>
+                </li>
             </ul>
-            <img class="open_btn" src="img/open_btn.png" alt="展开">
-        </div>
-        <div class="same content_footer">
-
-        </div>
-    </section>
-    <section class="detail_footer">
-
-    </section>
+            <div class="help_btn" id="helpBtn"></div>
+        </footer>
+    </div>
 </main>
 </body>
-<script src="js/zepto.min.js"></script>
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/ejs.min.js"></script>
+<script src="js/lib/swiper.min.js"></script>
+<script src="js/detail.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiperH = new Swiper('.swiper-container-h', {
+        spaceBetween: 50,
+        pagination: {
+            el: '.swiper-pagination-h',
+            clickable: true
+        }
+    });
+</script>
 </html>
