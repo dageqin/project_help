@@ -17,4 +17,19 @@ $getCode.on('tap', function () {
     bOk = !bOk;
 });
 
-
+/*前往帮忙*/
+$submit.on('tap', function(){
+    // event.preventDefault();//阻止form表单默认提交
+    $.ajax({
+        type: "post",
+        url: "/api/user/register",
+        data: $submit.serialize(),
+        success: function(res){
+            console.log(res);
+            window.location.href = './download.html';
+        },
+        error: function(err){
+            alert(err);
+        }
+    })
+});
