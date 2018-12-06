@@ -2,42 +2,131 @@
 
 .main {
     height: 100%;
-    background: url("../images/main_download.png") no-repeat center center;
-    background-size: 100% 100%;
+    background: url('../images/bg_open.png') no-repeat;
+    background-size: 100%;
     position: relative;
-    border: 0.01rem solid #979797;
 }
 
-.main .bg {
+.open_header {
+    width: 5.4rem;
+    height: 1rem;
     position: absolute;
-    left: 0.01rem;
-    top: 0.01rem;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, .3);
+    left: 1.76rem;
+    top: 0.06rem;
+    background: url('../images/bg_open_header.png') no-repeat;
+    background-size: 100%;
 }
 
-.bg .download {
-    margin-top: 8.96rem;
-    margin-bottom: 1.78rem;
-    margin-left: 1.25rem;
-    width: 5rem;
-    top: 8.96rem;
-    left: 1.25rem;
+.open_content {
+    width: 5.38rem;
+    height: 10.9rem;
+    text-align: center;
+    background: url("../images/bg_phonex.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.06rem;
+    opacity: 0.9;
+    letter-spacing: 0.024rem;
 }
 
-.download .common {
-    height: 1.1rem;
+.open_content .logo {
+    margin-top: 1.26rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.open_content .title {
+    font-size: 0.42rem;
+    margin: 0.3rem 0 0.4rem;
+}
+
+.open_content .subtitle {
+    font-size: 0.36rem;
+    color: #666666;
+}
+
+.open_content ul {
+    position: absolute;
+    top: 4.4rem;
+    left: -0.4rem;
+    color: #666666;
+    z-index: 1;
+}
+.open_content ul .common_li{
+    margin-bottom:0.3rem;
+}
+.open_content ul .common_li .common_left {
+    background: #FFFFFF;
+    border: 0.02rem solid #E4E4E1;
+    border-radius: 0.48rem;
+    width: 0.96rem;
+    height: 1.38rem;
+    text-align: center;
+    position: relative;
+    z-index: 100;
+}
+.open_content ul .common_li .common_left img{
+    width: 0.4rem;
+    height: 0.4rem;
+    margin: 0.24rem;
+    margin-bottom: 0;
+}
+.open_content ul .common_li .common_left img p{
+    font-size: 0.26rem;
+    color: #333333;
+    letter-spacing: 0.0074rem;
+}
+
+.open_content ul .common_li .common_right {
+    width: 3.68rem;
+    height: 0.66rem;
+    background: #EDEDEC;
+    box-shadow: 0.04rem 0.06rem 0.26rem 0 rgba(186,184,184,0.50);
+    border-radius: 0.46rem;
+    font-size: 0.23rem;
+    color: #666666;
+    letter-spacing: 0.0051rem;
+    text-align: left;
+    padding: 0.12rem 0.4rem;
+    margin-top:-1.2rem;
+    margin-left:0.68rem;
+}
+
+.open_content ul .common_li .circle{
+    opacity: 0.56;
+    background: #FDDB33;
+    width: 0.26rem;
+    height: 0.26rem;
+    border-radius: 50%;
+    display: inline-block;
+    float: right;
+    margin-top: -0.8rem;
+    margin-right: -0.4rem;
+}
+/*右侧的信息栏*/
+.open_content ul .message .common_left{
+    left: 5.2rem;
+}
+.open_content ul .message .common_right{
+    margin-left: 1.5rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+}
+.foo{
+    width: 6rem;
+    height: 1.06rem;
+    line-height: 1.06rem;
+    text-align: center;
+    background-image: linear-gradient(90deg, #FCD202 17%, #FCB91E 100%);
+    box-shadow: 0.03rem 0.07rem 0.26rem 0 rgba(153,153,153,0.50);
     border-radius: 0.55rem;
+    position: absolute;
+    bottom: 0.7rem;
+    left: -0.34rem;
+    font-size: 0.38rem;
+    color: #333333;
+    letter-spacing: 0.006rem;
 }
 
-.download .android {
-    margin-bottom: 0.5rem;
-    background: url("../images/android_btn.png");
-    background-size: 100% 100%;
-}
 
-.download .ios {
-    background: url("../images/ios_btn.png");
-    background-size: 100% 100%;
-}
