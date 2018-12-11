@@ -26,6 +26,7 @@ $submit.on('tap', function(){
         data: $submit.serialize(),
         success: function(res){
             console.log(res);
+            //验证成功，启动app，否则跳到下载页面
             window.location.href = './download.html';
         },
         error: function(err){
@@ -34,44 +35,4 @@ $submit.on('tap', function(){
     })
 });
 
-//启动app
-var openApp = function(){
 
-};
-$(function () {
-    var ua = window.navigator.userAgent.toLowerCase();
-    //微信
-    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
-        //微信浏览器绑定事件
-        /*$(".app").bind('click', function (event) {
-         window.location.href = '';
-         })*/
-    }else{//非微信浏览器
-        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {   //iPhone|iPod|iPad浏览器
-            $(".app").bind('click', function (event) {
-                var loadDateTime = new Date();
-                window.setTimeout(function () {
-                    var timeOutDateTime = new Date();
-                    if (timeOutDateTime - loadDateTime < 5000) {
-                        window.location = "http://itunes.apple.com/app/1219885292";//ios下载页面
-                    } else {
-                        window.close();
-                    }
-                }, 25);
-                window.location = "YuWan://com.YuWan.DianJingPingTai";    //调用ios启动页地址
-            })
-        }else if (navigator.userAgent.match(/android/i)) {  //安卓浏览器
-            $(".app").bind('click', function (event) {
-                var state = null;
-                try {
-                    window.location = 'appshare://bluemobi.cn.esport'; //调用andriod启动页地址
-                    setTimeout(function(){
-                        window.location= "download.html"; //android下载页面
-
-                    },500);
-                } catch(e) {}
-            })
-        }
-
-    }
-})
