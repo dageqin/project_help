@@ -17,7 +17,7 @@
         "userHead": "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547463546150814773",
         "cityName": "吉林市",
         "publishForwordCount": 1,
-        "gender":1,
+        "gender":2,
         "publishTypeIcon":8
     }
 };
@@ -59,12 +59,24 @@ function renderDOM(res) {
         default:
             dataList.publishTypeIconURL = './images/8qita.png';
     }
+    //渲染男女图标
+    var gender = dataList.gender;
+    switch (gender){
+        case 1: //男
+            dataList.gender='./images/nan.png';
+            break;
+        case 2: //女
+            dataList.gender='./images/nv.png';
+            break;
+        default:
+            dataList.gender='./images/nv.png';
+    }
     var template = $('#matchTemplate').html();
     var result = ejs.render(template, {dataList: dataList});
     $(".main").html(result);
 
 
-//渲染之后才会出现dom元素
+    //渲染之后才会出现dom元素
     var $showBtn = $("#allBtn");
     var $contentDetail = $('#contentDetail');
     var $content = $('#content');
@@ -73,6 +85,7 @@ function renderDOM(res) {
     var bShow = true;
     var imgShow = true;
 
+    //控制全文显示
     if (contentLen <= 118) {
         $showBtn.css('display', 'none');
     } else {
@@ -136,7 +149,7 @@ function renderDOM(res) {
 //接口 调取数据
 $(function () {
     var url = 'https://www.yaobangma.com/h5/getH5PublishDetail';
-    var data = [{publishId: '971d959d9ddc4cbdbf2885372cb1b549', usersId: '62528e1d79a94ea8a2614b27f6e77e2d'}];
+    var data = [{publishId: '971d959d9ddc4cbdbf2885372cb1b549', usersId: '62528e1d79a94ea8a2614b27f6e77e2d',helpType: 3}];
     $.ajax({
         url: url,
         data: data,

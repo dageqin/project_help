@@ -60,6 +60,9 @@ $getCode.on('tap', function () {
 /*前往帮忙*/
 $submit.on('tap', function (e) {
     e.preventDefault();//阻止form表单默认提交
+    var helpUserId = 23;
+    $("#helpUserId").val(helpUserId);
+    console.log($("#formInfo").serialize());
     $.ajax({
         type: "post",
         url: "../login/checkRegister",
@@ -67,7 +70,13 @@ $submit.on('tap', function (e) {
         success: function (res) {
             console.log(res);
             if(!res) return;
-            if(res != 200){
+            if(res.code == 600){
+                alert('验证码错误！');
+                return;
+            }else if(res.code == 100){
+                alert('验证码已过期！');
+                return;
+            }else {
                 alert(res.desc);
                 return;
             }
