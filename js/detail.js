@@ -122,7 +122,7 @@ function renderDOM(res) {
                 // $contentImg.height(132);
                 $contentImg.css('overflow', 'hidden');
             }
-            h = $content.height();
+            var h = $content.height();
             $footer.css('top', h - 70);
             imgShow = !imgShow;
             /*控制按钮箭头方向*/
