@@ -55,13 +55,14 @@
     float: left;
     width: 1.08rem;
     height: 100%;
+    margin-right: 0.1rem;
     /*height: 1.08rem;*/
 }
 
 /*详情内容头部-个人描述部分*/
 .detail_content .content_header .header_person {
     margin-left: 0.08rem;
-    padding: 0.1rem;
+    /*padding: 0.1rem;*/
     text-align: left;
 }
 
@@ -86,28 +87,31 @@
     height: 0.3rem;
     width: auto;
     line-height: 0.3rem;
-    padding: 0 0.12rem;
+    padding: 0.02rem 0.12rem;
 }
 
 /*gender-images，age*/
 .detail_content .content_header .header_person .gender_age {
     width: 0.72rem;
     height: 0.33rem;
-    padding: 0.02rem;
+    padding: 0.02rem 0.04rem;
     background-color: #56d8da;
+    text-align: center;
 }
 
 /*gender-images*/
 .detail_content .content_header .header_person .gender_age .tag_gender {
-    height: 90%;
+    height: 84%;
     display: inline-block;
     float: left;
+    /*margin: 0.02rem;*/
+    margin-left: 0.04rem;
 }
 
 /*age*/
 .detail_content .content_header .header_person .gender_age .tag_age {
     color: #ffffff;
-    padding-left: 2px;
+    /*padding-left: 2px;*/
 }
 
 /*标题*/
@@ -116,8 +120,9 @@
 }
 
 .detail_content .aim .aim_img {
-    width: 0.35rem;
-    height: 0.68rem;
+    /*width: 0.35rem;*/
+    /*height: 0.68rem;*/
+    height: 100%;
     float: left;
 }
 
@@ -154,24 +159,22 @@
     display: inline-block;
     float: right;
     color:#f6d744;
-    margin-top: -0.4rem;
+    /*margin-top: -0.4rem;*/
     font-size: 0.3rem;
 }
 
 .detail_content .content ul {
     width: 100%;
-    min-height: 1.94rem;
+    height: 1.94rem;
     margin: 0.4rem 0 0.2rem;
-    /*overflow: hidden;*/
+    overflow: hidden;
 }
 
 .detail_content .content ul li {
     float: left;
     width: 1.94rem;
     height: 1.94rem;
-    /*height: 100%;*/
     margin: 0 0.06rem;
-    background-color: #cccccc;
     display: inline-block;
     border-radius: 0.18rem;
 }
@@ -239,7 +242,7 @@
 .detail_footer ul li{
     float: left;
     height: 0.84rem;
-    line-height:0.84rem;
+    /*line-height:0.84rem;*/
 }
 .detail_footer ul .person img{
     height: 0.64rem;
@@ -276,9 +279,19 @@
     /*display: flex;*/
     /*flex-direction: row;*/
     /*justify-content: center;*/
-    background: url("../images/help_btn.png") no-repeat;
-    background-size: 100%;
+    /*background: url("../images/help_btn.png") no-repeat;*/
+    /*background-size: 100%;*/
     width: 4.53rem;
     height: 0.94rem;
+    line-height:0.94rem;
+    text-align: center;
     margin: 1rem;
+    background-image: linear-gradient(90deg, #FCD202 17%, #FCB91E 100%);
+    box-shadow: 0.03rem 0.07rem 0.26rem 0 rgba(153,153,153,0.50);
+    border-radius: 0.55rem;
+
+    font-family: PingFangSC-Regular;
+    font-size: 0.38rem;
+    color: #333333;
+    letter-spacing: 0.6px;
 }
