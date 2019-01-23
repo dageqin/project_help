@@ -40,7 +40,7 @@
 
 /*详情共同部分*/
 .detail_content .same {
-    width: 100%;
+    /*width: 100%;*/
     padding: 0.25rem 0.3rem;
     border-bottom: 1px solid #E6E6E6;
 }
@@ -57,7 +57,7 @@
     width: 1.08rem;
     height: 100%;
     margin-right: 0.1rem;
-    border-radius: 0.18rem;
+    border-radius: 50%;
     overflow: hidden;
     /*height: 1.08rem;*/
 }
@@ -211,16 +211,19 @@
 }
 
 .detail_content .content_footer .footer_img {
-    width: 0.22rem;
-    height: 0.22rem;
+    width: 0.24rem;
+    vertical-align: middle;
+    /*height: 0.22rem;*/
 }
 
 .detail_content .content_footer .footer_font {
     font-size: 0.22rem;
+    vertical-align: middle;
     color: #999999;
 }
 
 .detail_content .content_footer .time_img,
+.detail_content .content_footer .msg_img,
 .detail_content .content_footer .trans_img {
     margin-left: 0.3rem;
 }
@@ -239,10 +242,33 @@
     position: relative;
     top: 8.6rem;
     left: 0;
-    padding: 0 0.6rem;
+    padding: 0.36rem 0.6rem 0 0.6rem;
     text-align: left;
 }
-
+/*爱心公益*/
+.detail_footer .love{
+    /*width: 5.38rem;*/
+    height: 0.38rem;
+    line-height:0.38rem;
+    text-align: center;
+}
+.detail_footer .love img{
+    display: inline-block;
+    width: 0.28rem;
+    height: 0.28rem;
+    vertical-align: middle;
+}
+.detail_footer .love span{
+    font-family: PingFangSC-Regular;
+    font-size: 0.26rem;
+    color: #999999;
+    line-height: 0.38rem;
+}
+.detail_footer .love span .yellow{
+    color: #f6d744;
+    /*font-weight: bolder;*/
+}
+/*关系脉络*/
 .detail_footer p {
     font-size: 0.28rem;
     color: #666666;
@@ -278,15 +304,16 @@
 }
 
 /*箭头*/
-.detail_footer ul .arrow {
+/*.detail_footer ul .arrow {
 
-}
+}*/
 
 /*.detail_footer ul .arrow img{
     width: 100%;
     height: 100%;
 }*/
 /*一度*/
+/*
 .detail_footer ul .level {
     float: right;
 }
@@ -300,25 +327,29 @@
     text-align: center;
     padding: 0.01rem;
 }
+*/
 
 .detail_footer .help_btn {
-    /*display: flex;*/
-    /*flex-direction: row;*/
-    /*justify-content: center;*/
-    /*background: url("../images/help_btn.png") no-repeat;*/
-    /*background-size: 100%;*/
-    width: 4.53rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: url("../images/help_btn.png") no-repeat;
+    background-size: 100%;
+    width: 4.54rem;
     height: 0.94rem;
-    line-height: 0.94rem;
+
+    /*width: 4.53rem;*/
+    /*height: 0.94rem;*/
+    /*line-height: 0.94rem;*/
     text-align: center;
     margin: 1rem;
-    background-image: linear-gradient(90deg, #FCD202 17%, #FCB91E 100%);
-    box-shadow: 0.03rem 0.07rem 0.26rem 0 rgba(153, 153, 153, 0.50);
-    border-radius: 0.55rem;
-    font-family: PingFangSC-Regular;
-    font-size: 0.38rem;
-    color: #333333;
-    letter-spacing: 0.6px;
+    /*background-image: linear-gradient(90deg, #FCD202 17%, #FCB91E 100%);*/
+    /*box-shadow: 0.03rem 0.07rem 0.26rem 0 rgba(153, 153, 153, 0.50);*/
+    /*border-radius: 0.55rem;*/
+    /*font-family: PingFangSC-Regular;*/
+    /*font-size: 0.38rem;*/
+    /*color: #333333;*/
+    /*letter-spacing: 0.6px;*/
 }
 
 /*右箭头*/

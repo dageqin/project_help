@@ -7,7 +7,7 @@
     position: relative;
 }
 
-.open_header {
+/*.open_header {
     width: 5.4rem;
     height: 1rem;
     position: absolute;
@@ -15,7 +15,7 @@
     top: 0.06rem;
     background: url('../images/bg_open_header.png') no-repeat;
     background-size: 100%;
-}
+}*/
 
 .open_content {
     width: 5.38rem;

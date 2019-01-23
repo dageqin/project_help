@@ -12,6 +12,25 @@
     }, false);
 }();
 
+~function (pro) {
+    function queryURLParameter() {
+        var reg = /([^?&=#]+)=([^?&=#]+)/g,
+            obj = {};
+        this.replace(reg, function () {
+            obj[arguments[1]] = arguments[2];
+        });
+        reg = /#([^?=&#]+)/;
+        this.replace(reg, function () {
+            obj['HASH'] = arguments[1];
+        });
+        return obj;
+    }
+
+    pro.queryURLParameter = queryURLParameter;
+}(String.prototype);
+
+
+
 let $UAjax = function (url, data, type = 'POST', dataType = 'jsonp', options) {
     if (typeof type == 'obejct') {
         options = type;

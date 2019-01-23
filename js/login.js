@@ -21,13 +21,14 @@ var beNormal = function(){
 $getCode.on('tap', function () {
     var phoneNum = $('#phoneNum').val();
     if (!phoneNum) {
-        alert("请输入手机号码");
+        alert("请输入手机号码!");
         return;
     }
     if (!(myReg.test(phoneNum))) {
-        alert("请输入有效的手机号码");
+        alert("请输入有效的手机号码!");
         return;
     }
+    //按钮置灰
     beGray();
 
     // $getCode.css('background', bOk?'#e6e6e6':'#FCD204');
@@ -36,8 +37,10 @@ $getCode.on('tap', function () {
     //获取验证码接口
     $.ajax({
         type: "post",
-        url: "../login/getsmsCode",
-        data: JSON.stringify({"phoneNum": phoneNum}),
+        url: "/login/getsmsCode",
+        data: {"phoneNum": phoneNum},
+        dataType: 'json',
+        contentType: 'application/json',
         success: function (res) {
             console.log(res);
             if (!res) return;
@@ -60,13 +63,16 @@ $getCode.on('tap', function () {
 /*前往帮忙*/
 $submit.on('tap', function (e) {
     e.preventDefault();//阻止form表单默认提交
-    var helpUserId = 23;
+    var reqData = window.location.href.queryURLParameter();
+    var helpUserId = reqData.helpUserId;
     $("#helpUserId").val(helpUserId);
     console.log($("#formInfo").serialize());
     $.ajax({
         type: "post",
-        url: "../login/checkRegister",
+        url: "/h5/h5Regester",
         data: $("#formInfo").serialize(),
+        dataType: 'json',
+        contentType: 'application/json',
         success: function (res) {
             console.log(res);
             if(!res) return;
@@ -78,7 +84,6 @@ $submit.on('tap', function (e) {
                 return;
             }else {
                 alert(res.desc);
-                return;
             }
             //验证成功，启动app，否则跳到下载页面
             window.location.href = './download.html';

@@ -1,35 +1,48 @@
 /*var res = {
- "code": 200,
- "desc": null,
- "data": {
- "birthday": 24,
- "commentSize": 0,
- "publishTime": "20小时前",
- "publishTitle": "急寻失踪的河南9岁男童",
- "images": ["https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767", "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552204450542336", "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767", "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767"],
- "personalLabel": "",
- "publishContent": "张宇涛，男，9岁，身高约123cm，于2018年12月10日在河南省安阳市都里镇李珍村失踪。孩子出生在李珍村，智力有些问题，未上学，平时不爱说话。2018年12月10日下午3点左右，孩子独自出门去外面玩，到了吃晚饭时间（大概下午5-6点左右）家人找孩子吃饭时不见了孩子，在村里和附近都找遍了也没找到\n\n孩子失踪时身穿蓝色棉袄，浅蓝色裤子，脚穿一双棉鞋。现在家人万分着急！\n\n\n宝贝快回来,你的家人都不会怪你。有孩子任何消息的知情者可以在线联系我们提供线索，或者拨打宝贝回家求助站电话：0435-3338090（吉林通化）\n\n如果有陌生人收留他。有什么要求也可以直接联系我们。只要孩子安全回来，一切可以既往不咎。\n\n你的随手一转，也许就是这家人团圆的希望\n恳请大家帮忙转发一下，让这家人在新的一年能够团圆过年。",
- "industry": "",
- "userName": "宝贝回家",
- "userId": "26b374079fa1400e8377726883a99011",
- "publishId": "971d959d9ddc4cbdbf2885372cb1b549",
- "publishCity": "河南",
- "userHead": "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547463546150814773",
- "cityName": "吉林市",
- "publishForwordCount": 1,
- "gender":2,
- "publishTypeIcon":8,
- "helpUserHead":"./images/girl.jpg",
- "helpUserName":"张三"
- }
- };
- renderDOM(res);*/
+    "code": 200,
+    "desc": null,
+    "data": {
+        "birthday": 24,
+        "commentSize": 0,
+        "publishTime": "20小时前",
+        "publishTitle": "急寻失踪的河南9岁男童",
+        "images": ["https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767", "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552204450542336", "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767", "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767"],
+        "personalLabel": "靠谱,随性",
+        "publishContent": "张宇涛，男，9岁，身高约123cm，于2018年12月10日在河南省安阳市都里镇李珍村失踪。孩子出生在李珍村，智力有些问题，未上学，平时不爱说话。2018年12月10日下午3点左右，孩子独自出门去外面玩，到了吃晚饭时间（大概下午5-6点左右）家人找孩子吃饭时不见了孩子，在村里和附近都找遍了也没找到\n\n孩子失踪时身穿蓝色棉袄，浅蓝色裤子，脚穿一双棉鞋。现在家人万分着急！\n\n\n宝贝快回来,你的家人都不会怪你。有孩子任何消息的知情者可以在线联系我们提供线索，或者拨打宝贝回家求助站电话：0435-3338090（吉林通化）\n\n如果有陌生人收留他。有什么要求也可以直接联系我们。只要孩子安全回来，一切可以既往不咎。\n\n你的随手一转，也许就是这家人团圆的希望\n恳请大家帮忙转发一下，让这家人在新的一年能够团圆过年。",
+        "industry": "技术员",
+        "userName": "宝贝回家",
+        "userId": "26b374079fa1400e8377726883a99011",
+        "publishId": "971d959d9ddc4cbdbf2885372cb1b549",
+        "publishCity": "河南",
+        "userHead": "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547463546150814773",
+        "cityName": "吉林市",
+        "publishForwordCount": 1,
+        "gender": 2,
+        "publishTypeIcon": 9,
+        "helpUserHead": "./images/girl.jpg",
+        "helpUserName": "张三",
+        "pstate": true, //是否公益
+        "followSize": 10, //公益次数
+    }
+};
+renderDOM(res);*/
 
-function renderDOM(res) {
+
+function renderDOM(res, helpId) {
     var dataList = res && res.data;
     var content = dataList.publishContent;
     var contentLen = content.length;
     var imgLen = dataList.images && dataList.images.length;
+    var personLable = dataList.personalLabel;
+    var posZH = personLable.indexOf('，');
+    var posEn = personLable.indexOf(',');
+    //多个个人标签显示一个
+    if (posZH > 0) {
+        dataList.personalLabel = personLable.slice(0, posZH);
+    } else if (posEn > 0) {
+        dataList.personalLabel = personLable.slice(0, posEn);
+    }
+    //内容截取
     if (contentLen > 118) {
         var showText = content.slice(0, 118);
         dataList.publishContent = showText;
@@ -58,8 +71,19 @@ function renderDOM(res) {
         case 7://提问
             dataList.publishTypeIconURL = './images/7tiwen.png';
             break;
-        default:
+        case 8://其他
             dataList.publishTypeIconURL = './images/8qita.png';
+            break;
+        case 9://生命抽
+            dataList.publishTypeIconURL = './images/9shengmingchou.png';
+            break;
+        case 10://寻亲
+            dataList.publishTypeIconURL = './images/10xunqin.png';
+            break;
+        case 11://助学
+            dataList.publishTypeIconURL = './images/11zhuxue.png';
+            break;
+        // default:
     }
     //渲染男女图标
     var gender = dataList.gender;
@@ -145,39 +169,25 @@ function renderDOM(res) {
     });
     //立即帮他
     $("#helpBtn").click(function () {
-        window.location = './login.html';
+        window.location = './login.html?helpUserId=' + helpId;
     });
 }
-~function (pro) {
-    function queryURLParameter() {
-        var reg = /([^?&=#]+)=([^?&=#]+)/g,
-            obj = {};
-        this.replace(reg, function () {
-            obj[arguments[1]] = arguments[2];
-        });
-        reg = /#([^?=&#]+)/;
-        this.replace(reg, function () {
-            obj['HASH'] = arguments[1];
-        });
-        return obj;
-    }
-    pro.queryURLParameter = queryURLParameter;
-}(String.prototype);
+
 
 //接口 调取数据
 $(function () {
     var reqData = window.location.href.queryURLParameter();
     console.log(reqData);
-    var url = 'h5/getH5PublishDetail';
+    var url = '/h5/getH5PublishDetail';
     var data = {
         publishId: reqData.publishId,
-        usersId: reqData.usersId,
+        helpUserId: reqData.helpUserId,
         helpType: reqData.helpType,
     };
     $.ajax({
         url: url,
         data: data,
-        type: 'POST',
+        type: 'GET',
         dataType: 'json',
         contentType: 'application/json',
         success: function (res) {
@@ -187,7 +197,7 @@ $(function () {
                 alert(res.desc);
                 return;
             }
-            renderDOM(res);
+            renderDOM(res, reqData.helpUserId);
         }
     });
 });
