@@ -47,14 +47,14 @@
             <div class="same content">
                 <p class="content_detail" id="contentDetail"><%=dataList.publishContent%>
                 </p>
-                <span class="all_btn" id="allBtn">全文</span>
+                <!--<span class="all_btn" id="allBtn">全文</span>-->
                 <ul class="content_img" id="contentImg">
                     <% for (var i = 0; i < dataList.images.length; i++) { %>
                     <% var image = dataList.images[i] %>
                     <li><img src="<%=image%>" alt=""></li>
                     <% } %>
                 </ul>
-                <img id="imageOpen" class="open_btn" src="images/open_btn.png" alt="open">
+                <!--<img id="imageOpen" class="open_btn" src="images/open_btn.png" alt="open">-->
             </div>
             <div class="same content_footer">
                 <div class="footer_left">
@@ -101,6 +101,7 @@
                     <img src="<%= dataList.userHead%>" alt="">
                     <p><%= dataList.userName%></p>
                 </li>
+                <% if(dataList.helpUserName){ %>
                 <li clas="arrow" style="margin: 0 0.2rem;position: relative;width: 0.2rem;">
                     <!--<img src="images/arroow.png" alt="arrow">-->
                     <!--画箭头-->
@@ -116,15 +117,17 @@
                     <img src="<%= dataList.helpUserHead%>" alt="">
                     <!--<p>董海宁</p>-->
                     <p><%= dataList.helpUserName%></p>
+                    <img class="zhuan" src="./images/btn_zhuan.png" alt="转">
                 </li>
+                <%}%>
                 <!--<li class="level">-->
                     <!--<p>一度</p>-->
                 <!--</li>-->
             </ul>
             <%}%>
-            <div class="help_btn" id="helpBtn"></div>
         </footer>
-        </script>
+            <div class="help_btn" id="helpBtn"></div>
+    </script>
     </div>
 </main>
 </body>
