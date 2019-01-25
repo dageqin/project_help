@@ -84,9 +84,11 @@
 .detail_content .content_header .header_person .tag {
     display: inline-block;
     border-radius: 0.2rem;
+    text-align: center;
+    vertical-align: sub; /*ok*/
 }
 
-/*description*/
+/*description 0.34*/
 .detail_content .content_header .header_person .tag_desc {
     border: 1px solid #fcdb40;
     background-color: #fbf3cd;
@@ -96,11 +98,12 @@
     padding: 0.02rem 0.12rem;
 }
 
-/*gender-images，age*/
+/*gender-images，age 0.38*/
 .detail_content .content_header .header_person .gender_age {
     width: 0.72rem;
-    height: 0.33rem;
-    padding: 0.02rem 0.04rem;
+    height: 0.34rem; /*ok*/
+    line-height: 0.34rem;
+    padding: 0.02rem 0.04rem; /*ok*/
     background-color: #56d8da;
     text-align: center;
 }
@@ -110,8 +113,9 @@
     height: 84%;
     display: inline-block;
     float: left;
-    /*margin: 0.02rem;*/
+    vertical-align: middle;
     margin-left: 0.04rem;
+    margin-top: 0.02rem;
 }
 
 /*age*/
@@ -135,6 +139,7 @@
 }
 
 .detail_content .aim .aim_title {
+    font-weight: bolder; /*ok*/
     font-family: PingFangSC-Medium;
     font-size: 0.36rem;
     color: #333333;
@@ -188,7 +193,7 @@
 
 .detail_content .content ul li img {
     width: 100%;
-    /*height: 100%;*/
+    height: 100%;
 }
 
 /*展开按钮*/
@@ -240,29 +245,29 @@
 /*关系脉络*/
 .detail_footer {
     position: relative;
-    top: 8.6rem;
+    top: 8rem;
     left: 0;
-    padding: 0.36rem 0.6rem;
+    padding: 0.3rem 0.6rem;
     text-align: left;
 }
 /*爱心公益*/
 .detail_footer .love{
     /*width: 5.38rem;*/
-    height: 0.38rem;
-    line-height:0.38rem;
+    height: 0.28rem;
+    line-height:0.28rem;
     text-align: center;
 }
 .detail_footer .love img{
     display: inline-block;
     width: 0.28rem;
     height: 0.28rem;
-    vertical-align: middle;
+    vertical-align: sub; /*ok*/
 }
 .detail_footer .love span{
     font-family: PingFangSC-Regular;
     font-size: 0.26rem;
     color: #999999;
-    line-height: 0.38rem;
+    line-height: 0.28rem;
 }
 .detail_footer .love span .yellow{
     color: #f6d744;
@@ -337,9 +342,9 @@
 */
 
 .help_btn {
-    position: fixed;
-    bottom: 1rem;
-    left: 1.4rem;
+    /*position: fixed;*/
+    /*bottom: 1rem;*/
+    /*left: 1.4rem;*/
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -351,8 +356,8 @@
     /*width: 4.53rem;*/
     /*height: 0.94rem;*/
     /*line-height: 0.94rem;*/
-    /*text-align: center;*/
-    /*margin: 1rem;*/
+    text-align: center;
+    margin: 0.5rem 1rem;
     /*background-image: linear-gradient(90deg, #FCD202 17%, #FCB91E 100%);*/
     /*box-shadow: 0.03rem 0.07rem 0.26rem 0 rgba(153, 153, 153, 0.50);*/
     /*border-radius: 0.55rem;*/

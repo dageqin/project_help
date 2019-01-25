@@ -1,8 +1,8 @@
-/*var res = {
+var res = {
     "code": 200,
     "desc": null,
     "data": {
-        "birthday": 24,
+        "birthday": 2,
         "commentSize": 0,
         "publishTime": "20小时前",
         "publishTitle": "急寻失踪的河南9岁男童",
@@ -34,7 +34,7 @@
         "followSize": 10, //公益次数
     }
 };
-renderDOM(res);*/
+renderDOM(res);
 
 
 function renderDOM(res, helpId) {
@@ -116,13 +116,16 @@ function renderDOM(res, helpId) {
     var imgShow = true;
 
     var contentHeight = $content.height();
-    $footer.css('top', contentHeight - 70);
+    console.log(contentHeight);
+    $footer.css('top', contentHeight - 60);
     var originHeight = $contentImg.height();
-    console.log(originHeight);
     if(imgLen == 0){
         $contentImg.height(0);
     }else if(imgLen > 3){
         var num = Math.ceil(imgLen / 3);
+        if(num > 3){
+            num = 3;
+        }
         $contentImg.height(originHeight * num);
     }
 
