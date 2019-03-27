@@ -2,21 +2,30 @@ var $getCode = $('#getCode');
 var $submit = $('#submit');
 var bOk = true;
 var myReg = /^[1][3|4|5|6|7|8|9][0-9]{9}$/;
+var countdown = 60;
 
-var beGray = function(){
-    $getCode.css('background', '#e6e6e6');
-    $submit.css('background', '#e6e6e6');
-    $getCode.css('disabled', true);
-    $submit.css('disabled', true);
-};
-
-var beNormal = function(){
-    $getCode.css('background', '#FCD204');
-    $submit.css('background', '#FCD204');
-    $getCode.css('disabled', false);
-    $submit.css('disabled', false);
-};
-
+//倒计时
+function setTime() {
+    if (countdown == 0) {
+        $getCode.css('disabled', false);
+        $getCode.css('background', '#FCD204');
+        $getCode.text('获取验证码');
+        // $submit.css('background', '#FCD204');
+        // $submit.css('disabled', false);
+        countdown = 60;
+        return false;
+    } else {
+        $getCode.css('background', '#e6e6e6');
+        $getCode.css('disabled', true);
+        $getCode.text("重新发送(" + countdown + ")");
+        // $submit.css('background', '#e6e6e6');
+        // $submit.css('disabled', true);
+        countdown--;
+    }
+    setTimeout(function() {
+        setTime();
+    },1000);
+}
 //get Code
 $getCode.on('tap', function () {
     var phoneNum = $('#phoneNum').val();
@@ -28,12 +37,7 @@ $getCode.on('tap', function () {
         alert("请输入有效的手机号码!");
         return;
     }
-    //按钮置灰
-    beGray();
-
-    // $getCode.css('background', bOk?'#e6e6e6':'#FCD204');
-    // $submit.css('background', bOk?'#e6e6e6':'#FCD204');
-    // bOk = !bOk;
+    setTime();
     //获取验证码接口
     $.ajax({
         type: "post",
@@ -48,14 +52,9 @@ $getCode.on('tap', function () {
                 alert(res.desc);
                 return;
             }
-            //获取验证码成功
-            beNormal();
-            // window.location.href = './download.html';
-            // bOk = !bOk;
         },
         error: function (err) {
             alert(err);
-            beNormal();
         }
     })
 });
@@ -93,5 +92,6 @@ $submit.on('tap', function (e) {
         }
     })
 });
+
 
 

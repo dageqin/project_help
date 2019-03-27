@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta name="keywords" content="素友，六度人脉，熟人社交，帮忙"/>
+    <title>素友</title>
+    <link rel="stylesheet" href="index.css">
+    <script>
+        +function () {
+            remLayout();
+            function remLayout() {
+                var designSize = 1920; // 设计图尺寸
+                var html = document.documentElement;
+                var wW = html.clientWidth;// 窗口宽度
+                var rem = wW * 100 / designSize;
+                document.documentElement.style.fontSize = rem + 'px';
+                console.log(rem);
+            }
+
+            window.onresize = remLayout;
+        }();
+    </script>
+<body>
+<div class="content">
+    <header class="logo"></header>
+    <main class="main">
+        <div class="phone"></div>
+        <div class="des">
+            <div class="text"></div>
+            <div class="code">
+                <span class="android"></span>
+                <span class="ios"></span>
+            </div>
+        </div>
+    </main>
+    <footer class="footer"></footer>
+</div>
+<script type="text/javascript">
+</script>
+</body>
+</html>

@@ -8,6 +8,21 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="css/pub/swiper.min.css">
     <link rel="stylesheet" href="css/detail.css">
+    <script>
+        +function () {
+            remLayout();
+            function remLayout() {
+                var w = document.documentElement.clientWidth;
+                w = w > 768 ? 768 : w;
+                w = w <= 320 ? 320 : w;
+                document.documentElement.style.fontSize = w / 7.5 + 'px';
+            }
+
+            window.addEventListener('resize', function () {
+                remLayout();
+            }, false);
+        }();
+    </script>
 </head>
 <body>
 <main class="main swiper-container swiper-container-h">

@@ -1,0 +1,92 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    font-size: 100px;
+}
+
+body {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("images/bg.png") no-repeat;
+    background-size: 100% 100%;
+    font-size: 14px;
+}
+
+.content {
+    margin-left: 2.9rem;
+    /*margin-bottom: 0.7rem;*/
+}
+
+.content .logo {
+    margin-left: 0.7rem;
+    background: url("images/logo.png") no-repeat;
+    background-size: 100% 100%;
+    width: 1.86rem;
+    height: 1.16rem;
+}
+
+.content .main {
+    margin-top: 1rem;
+}
+
+.content .main .phone {
+    width: 5.9rem;
+    height: 7.12rem;
+    background: url("images/phone.png") no-repeat;
+    background-size: 80% 80%;
+    float: left;
+}
+
+/*右侧文字区域*/
+.content .main .des {
+    float: left;
+    margin-left: 1.24rem;
+}
+.content .main .des .text{
+    width: 6.46rem;
+    height: 2.9rem;
+    background: url("images/text.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.content .main .des .code{
+    margin-top:0.4rem;
+    margin-left:0.46rem;
+}
+.content .main .des .code .android{
+    display: inline-block;
+    width: 1.44rem;
+    height: 1.44rem;
+    background: url("images/android.png") no-repeat;
+    background-size: 100% 100%;
+}
+.content .main .des .code .ios{
+    display: inline-block;
+    width: 1.44rem;
+    height: 1.44rem;
+    margin-left:1.66rem;
+    background: url("images/ios.png") no-repeat;
+    background-size: 100% 100%;
+}
+.clearfloat{
+    clear:both;
+}
+/*footer*/
+.content .footer{
+    position: fixed;
+    bottom: 0.7rem;
+    display: block;
+    width: 3.12rem;
+    height: 0.24rem;
+    background: url("images/text_footer.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: 5.6rem;
+}
