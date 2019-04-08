@@ -45,18 +45,52 @@ body {
     float: left;
 }
 
-/*右侧文字区域*/
+/*右侧区域*/
 .content .main .des {
     float: left;
     margin-left: 1.24rem;
 }
+/*文字*/
 .content .main .des .text{
     width: 6.46rem;
     height: 2.9rem;
-    background: url("images/text.png") no-repeat;
+    /*background: url("images/text.png") no-repeat;*/
+    /*background-size: 100% 100%;*/
+}
+.content .main .des .text .text_up{
+    width: 6.46rem;
+    height: 1.76rem;
+    background: url("images/text_suyou.png") no-repeat;
     background-size: 100% 100%;
 }
-
+/*按钮*/
+.content .main .des .text .text_down{
+    /*margin-top: 0.4rem;*/
+    width: 6.46rem;
+    height: 0.74rem;
+}
+.content .main .des .text .text_down .code{
+    display: inline-block;
+    width: 2.36rem;
+    height: 0.74rem;
+}
+.content .main .des .text .text_down .code .code_and{
+    display: inline-block;
+    width: 2.36rem;
+    height: 0.74rem;
+    background: url("images/text_and.png") no-repeat;
+    background-size: 100% 100%;
+    margin-left: -0.43rem;
+}
+.content .main .des .text .text_down .code .code_ios{
+    display: inline-block;
+    width: 2.36rem;
+    height: 0.74rem;
+    background: url("images/text_ios.png") no-repeat;
+    background-size: 100% 100%;
+    /*margin-left: -0.23rem;*/
+}
+/*二维码*/
 .content .main .des .code{
     margin-top:0.4rem;
     margin-left:0.46rem;
@@ -72,7 +106,7 @@ body {
     display: inline-block;
     width: 1.44rem;
     height: 1.44rem;
-    margin-left:1.66rem;
+    margin-left:1.8rem;
     background: url("images/ios.png") no-repeat;
     background-size: 100% 100%;
 }
