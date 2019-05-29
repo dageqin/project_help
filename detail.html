@@ -28,120 +28,193 @@
 <main class="main swiper-container swiper-container-h">
     <script type="text/template" id="matchTemplate">
         <div class="swiper-slide">
-        <header class="detail_header">
-            <img class="header_img" src="images/detail_header.png" alt="help_img">
-        </header>
-        <section id="content" class="detail_content">
-            <div class="same content_header">
-                <!--<img class="header_photo" src="images/header_photo.png" alt="">-->
-                <div class="header_photo">
-                    <img src="<%=dataList.userHead%>" alt="">
+            <header class="detail_header">
+                <img class="header_img" src="images/detail_header.png" alt="help_img">
+                <div class="header_logo">
+                    <div class="logo_top">
+                        <img class="logo" src="images/logo.png" alt="logo">
+                        <img class="suyou" src="images/btn_suyou.png" alt="素友">
+                    </div>
+                    <div class="world">
+                        <img src="images/world.png" alt="世界很干净，人性很温暖">
+                    </div>
+                    <div class="friend">
+                        <img src="images/friend.png" alt="打开心，帮朋友">
+                    </div>
+                    <div class="you">
+                        <img src="images/you.png" alt="你是闪光的人">
+                    </div>
                 </div>
-                <div class="header_person">
-                    <!--<p class="person_name">学习雷锋（张培林）</p>-->
-                    <p class="person_name"><%=dataList.userName%></p>
-                    <span class="tag gender_age">
-                    <img class="tag_gender" src="<%=dataList.gender%>" alt="gender">
-                    <!--<strong class="tag_age">24</strong>-->
-                    <strong class="tag_age"><%=dataList.birthday%></strong>
-                    </span>
-                    <!--<span class="tag tag_desc city">杭州</span>-->
-                    <!--<span class="tag tag_desc job">设计师</span>-->
-                    <!--<span class="tag tag_desc evaluate">讲义气</span>-->
-                    <span class="tag tag_desc city"><%=dataList.publishCity%></span>
-                    <span class="tag tag_desc job"><%=dataList.industry%></span>
-                    <span class="tag tag_desc evaluate"><%=dataList.personalLabel%></span>
+            </header>
+            <section id="content" class="detail_content">
+                <div class="heaer_help">
+                    <span class="name"><%=dataList.helpUserName%></span>
+                    <span>：“这是我朋友，有人能帮帮他吗？”</span>
                 </div>
-            </div>
-            <div class="same aim">
-                <!--<img class="aim_img" src="images/aim.png" alt="help_img">-->
-                <img class="aim_img" src="<%=dataList.publishTypeIconURL%>" alt="">
-                <!--<span class="aim_title">寻找杭州上城区铺面一间，求帮</span>-->
-                <span class="aim_title"><%=dataList.publishTitle%></span>
-            </div>
-            <div class="same content">
-                <p class="content_detail" id="contentDetail"><%=dataList.publishContent%>
-                </p>
-                <!--<span class="all_btn" id="allBtn">全文</span>-->
-                <ul class="content_img" id="contentImg">
-                    <% for (var i = 0; i < dataList.images.length; i++) { %>
-                    <% var image = dataList.images[i] %>
-                    <li><img src="<%=image%>" alt=""></li>
-                    <% } %>
-                </ul>
-                <!--<img id="imageOpen" class="open_btn" src="images/open_btn.png" alt="open">-->
-            </div>
-            <div class="same content_footer">
-                <div class="footer_left">
-                    <img class="footer_img city_img" src="images/btn_city.png" alt="city">
-                    <!--发布城市-->
-                    <span class="footer_font"><%= dataList.publishCity%></span>
-                    <img class="footer_img time_img" src="images/btn_time.png" alt="time">
-                    <!--<span class="footer_font">两天前</span>-->
-                    <span class="footer_font"><%= dataList.publishTime%></span>
+                <div class="same content_header">
+                    <!--<img class="header_photo" src="images/header_photo.png" alt="">-->
+                    <div class="header_photo">
+                        <img src="<%=dataList.userHead%>" alt="">
+                    </div>
+                    <div class="header_person">
+                        <!--<p class="person_name">学习雷锋（张培林）</p>-->
+                        <p class="person_name"><%=dataList.userName%></p>
+                        <span class="tag gender_age" id="gender">
+                            <img class="tag_gender" src="<%=dataList.gender%>" alt="gender">
+                            <!--<strong class="tag_age">24</strong>-->
+                            <span class="tag_age"><%=dataList.birthday%></span>
+                        </span>
+                        <span class="create_date"><%=dataList.publishTime%></span>
+                        <!--<span class="tag tag_desc city">杭州</span>-->
+                        <!--<span class="tag tag_desc job">设计师</span>-->
+                        <!--<span class="tag tag_desc evaluate">讲义气</span>-->
+                        <p>
+                        <span class="tag tag_desc city"><%=dataList.publishCity%></span>
+                        <span class="tag tag_desc job"><%=dataList.industry%></span>
+                        <span class="tag tag_desc evaluate"><%=dataList.personalLabel%></span>
+                        </p>
+                    </div>
                 </div>
-                <div class="footer_right">
-                    <!--是否公益-->
-                    <% if(dataList.pstate){%>
-                    <img class="footer_img msg_img" src="images/btn_love.png" alt="love">
-                    <!--公益数-->
-                    <span class="footer_font"><%= dataList.followSize%></span>
-                    <% } %>
-                    <img class="footer_img msg_img" src="images/btn_msg.png" alt="msg">
-                    <!--<span class="footer_font">12</span>-->
-                    <!--发布评论数-->
-                    <span class="footer_font"><%= dataList.commentSize%></span>
-                    <img class="footer_img trans_img" src="images/btn_trans.png" alt="trans">
-                    <!--<span class="footer_font">52</span>-->
-                    <!--发布转载数-->
-                    <span class="footer_font"><%= dataList.publishForwordCount%></span>
+                <div class="aim">
+                    <!--<img class="aim_img" src="images/aim.png" alt="help_img">-->
+                    <img class="aim_img" src="<%=dataList.publishTypeIconURL%>" alt="">
+                    <!--<span class="aim_title">寻找杭州上城区铺面一间，求帮</span>-->
+                    <span class="aim_title"><%=dataList.publishTitle%></span>
                 </div>
-            </div>
-        </section>
-        <footer class="detail_footer" id="footer">
-            <!--是否公益-->
-            <%if(dataList.pstate){%>
-            <div class="love">
-                <img src="./images/love.png" alt="love">
-                <span>本条求助信息来自第三方平台
+                <div class="content">
+                    <p class="content_detail" id="contentDetail" style="white-space:pre-line">
+                        <%=dataList.publishContent%>
+                    </p>
+                    <!--<span class="all_btn" id="allBtn">全文</span>-->
+                    <ul class="content_img" id="contentImg">
+                        <% for (var i = 0; i < dataList.images.length; i++) { %>
+                        <% var image = dataList.images[i] %>
+                        <li><img src="<%=image%>" alt=""></li>
+                        <% } %>
+                    </ul>
+                    <!--<img id="imageOpen" class="open_btn" src="images/open_btn.png" alt="open">-->
+                </div>
+                <div class="same content_footer">
+                    <p>有偿</p>
+                    <p>帮转红包</p>
+                   <!-- <div class="footer_left">
+                        <img class="footer_img city_img" src="images/btn_city.png" alt="city">
+                        &lt;!&ndash;发布城市&ndash;&gt;
+                        <span class="footer_font"><%= dataList.publishCity%></span>
+                        <img class="footer_img time_img" src="images/btn_time.png" alt="time">
+                        &lt;!&ndash;<span class="footer_font">两天前</span>&ndash;&gt;
+                        <span class="footer_font"><%= dataList.publishTime%></span>
+                    </div>
+                    <div class="footer_right">
+                        &lt;!&ndash;是否公益&ndash;&gt;
+                        <% if(dataList.pstate){%>
+                        <img class="footer_img msg_img" src="images/btn_love.png" alt="love">
+                        &lt;!&ndash;公益数&ndash;&gt;
+                        <span class="footer_font"><%= dataList.followSize%></span>
+                        <% } %>
+                        <img class="footer_img msg_img" src="images/btn_msg.png" alt="msg">
+                        &lt;!&ndash;<span class="footer_font">12</span>&ndash;&gt;
+                        &lt;!&ndash;发布评论数&ndash;&gt;
+                        <span class="footer_font"><%= dataList.commentSize%></span>
+                        <img class="footer_img trans_img" src="images/btn_trans.png" alt="trans">
+                        &lt;!&ndash;<span class="footer_font">52</span>&ndash;&gt;
+                        &lt;!&ndash;发布转载数&ndash;&gt;
+                        <span class="footer_font"><%= dataList.publishForwordCount%></span>
+                    </div>-->
+                </div>
+            </section>
+            <footer class="detail_footer" id="footer">
+                <div class="red_bag">
+                    <img src="images/redbag.png" alt="红包">
+                    <p class="red_text">
+                        <span style="color: #FDD400"><%=dataList.helpUserName%></span>
+                        <span>送了你一个帮转红包，快来领呀！</span>
+                    </p>
+                </div>
+                <div class="btn">
+                    <div class="red_btn" id="redBtn"></div>
+                    <div class="help_btn" id="helpBtn"></div>
+                </div>
+                <div class="list">
+                    <div class="list_detail">
+                        <div class="item">
+                            <img src="images/header_photo.png" alt="头像">
+                            <span>刘彤彤</span>
+                            <span class="money">
+                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
+                            </span>
+                        </div>
+                        <div class="item">
+                            <img src="images/header_photo.png" alt="头像">
+                            <span>刘彤彤</span>
+                            <span class="money">
+                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
+                            </span>
+                        </div>
+                        <div class="item">
+                            <img src="images/header_photo.png" alt="头像">
+                            <span>刘彤彤</span>
+                            <span class="money">
+                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
+                            </span>
+                        </div>
+                        <div class="item">
+                            <img src="images/header_photo.png" alt="头像">
+                            <span>刘彤彤</span>
+                            <span class="money">
+                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
+                            </span>
+                        </div>
+                    </div>
+                    <div class="total">
+                        已有<span style="color: #FDD400;padding-left: 0.04rem;">1232</span>人领导朋友的红包
+                    </div>
+                </div>
+            </footer>
+            <!--<footer class="detail_footer" id="footer">
+                &lt;!&ndash;是否公益&ndash;&gt;
+                <%if(dataList.pstate){%>
+                <div class="love">
+                    <img src="./images/love.png" alt="love">
+                    <span>本条求助信息来自第三方平台
                     <span class="yellow">【<%=dataList.userName%>】</span>
                 </span>
-            </div>
-            <%}else{%>
-            <p>关系脉络</p>
-            <ul>
-                <li class="person">
-                    <!--<img src="images/header_photo.png" alt="images">-->
-                    <!--<p>张培林</p>-->
-                    <img src="<%= dataList.userHead%>" alt="">
-                    <p><%= dataList.userName%></p>
-                </li>
-                <% if(dataList.helpUserName){ %>
-                <li clas="arrow" style="margin: 0 0.2rem;position: relative;width: 0.2rem;">
-                    <!--<img src="images/arroow.png" alt="arrow">-->
-                    <!--画箭头-->
-                    <div class="arrow-right arrow-box">
-                        <b class="right">
-                            <i class="right-arrow1"></i>
-                            <i class="right-arrow2"></i>
-                        </b>
-                    </div>
-                </li>
-                <li class="person">
-                    <!--<img src="images/header_photo.png" alt="images">-->
-                    <img src="<%= dataList.helpUserHead%>" alt="">
-                    <!--<p>董海宁</p>-->
-                    <p><%= dataList.helpUserName%></p>
-                    <img class="zhuan" src="./images/btn_zhuan.png" alt="转">
-                </li>
+                </div>
+                <%}else{%>
+                <p>关系脉络</p>
+                <ul>
+                    <li class="person">
+                        &lt;!&ndash;<img src="images/header_photo.png" alt="images">&ndash;&gt;
+                        &lt;!&ndash;<p>张培林</p>&ndash;&gt;
+                        <img src="<%= dataList.userHead%>" alt="">
+                        <p><%= dataList.userName%></p>
+                    </li>
+                    <% if(dataList.helpUserName){ %>
+                    <li clas="arrow" style="margin: 0 0.2rem;position: relative;width: 0.2rem;">
+                        &lt;!&ndash;<img src="images/arroow.png" alt="arrow">&ndash;&gt;
+                        &lt;!&ndash;画箭头&ndash;&gt;
+                        <div class="arrow-right arrow-box">
+                            <b class="right">
+                                <i class="right-arrow1"></i>
+                                <i class="right-arrow2"></i>
+                            </b>
+                        </div>
+                    </li>
+                    <li class="person">
+                        &lt;!&ndash;<img src="images/header_photo.png" alt="images">&ndash;&gt;
+                        <img src="<%= dataList.helpUserHead%>" alt="">
+                        &lt;!&ndash;<p>董海宁</p>&ndash;&gt;
+                        <p><%= dataList.helpUserName%></p>
+                        <img class="zhuan" src="./images/btn_zhuan.png" alt="转">
+                    </li>
+                    <%}%>
+                    &lt;!&ndash;<li class="level">&ndash;&gt;
+                    &lt;!&ndash;<p>一度</p>&ndash;&gt;
+                    &lt;!&ndash;</li>&ndash;&gt;
+                </ul>
                 <%}%>
-                <!--<li class="level">-->
-                    <!--<p>一度</p>-->
-                <!--</li>-->
-            </ul>
-            <%}%>
-            <div class="help_btn" id="helpBtn"></div>
-        </footer>
+                <div class="help_btn" id="helpBtn"></div>
+            </footer>-->
     </script>
     </div>
 </main>

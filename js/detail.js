@@ -2,7 +2,7 @@ var res = {
     "code": 200,
     "desc": null,
     "data": {
-        "birthday": 2,
+        "birthday": 24,
         "commentSize": 0,
         "publishTime": "20小时前",
         "publishTitle": "急寻失踪的河南9岁男童",
@@ -112,9 +112,15 @@ function renderDOM(res, helpId) {
     var $content = $('#content');
     var $footer = $('#footer');
     var $contentImg = $('#contentImg');
+    var $gender = $('#gender');
     var bShow = true;
     var imgShow = true;
 
+    if(gender == 1){
+        $gender.css('background-color','#56d8da');
+    }else if(gender == 2){
+        $gender.css('background-color','#fb8e8e');
+    }
     var contentHeight = $content.height();
     console.log(contentHeight);
     $footer.css('top', contentHeight - 60);

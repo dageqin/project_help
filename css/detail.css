@@ -14,8 +14,9 @@
 }
 
 .detail_header {
-    height: 5.26rem;
+    height: 6.38rem;
     position: relative;
+    text-align: center;
 }
 
 /*头部的背景图*/
@@ -24,11 +25,52 @@
     width: 100%;
     height: 100%;
 }
-
+.detail_header .header_logo{
+    position: absolute;
+    top: 1.1rem;
+    left: 1.34rem;
+}
+.detail_header .header_logo div{
+    margin-bottom: 0.24rem;
+}
+.detail_header .header_logo .logo_top{
+    height: 0.88rem;
+    line-height: 0.88rem;
+}
+.detail_header .header_logo .logo_top img{
+    display: inline-block;
+    vertical-align: middle;
+}
+.detail_header .header_logo .logo_top .logo{
+    width: 0.88rem;
+    height: 0.88rem;
+}
+.detail_header .header_logo .logo_top .suyou{
+    width: 1.1rem;
+    height: 0.5rem;
+}
+.detail_header .header_logo .world{
+    margin-bottom: 0.24rem;
+}
+.detail_header .header_logo .world img{
+    width: 4.6rem;
+    height: 0.52rem;
+}
+.detail_header .header_logo .friend{
+    margin-bottom: 0.2rem;
+}
+.detail_header .header_logo .friend img{
+    width: 3.88rem;
+    height: 0.65rem;
+}
+.detail_header .header_logo .you img{
+    width: 3.72rem;
+    height: 0.5rem;
+}
 /*详情内容部分*/
 .detail_content {
     position: absolute;
-    top: 3.78rem;
+    top: 4.88rem;
     left: 0.3rem;
     width: 6.9rem;
     height:auto;
@@ -36,7 +78,17 @@
     box-shadow: 2px 2px 19px 0 rgba(153, 153, 153, 0.50);
     border-radius: 16px;
 }
-
+.detail_content .heaer_help{
+    width: 100%;
+    padding: 0.2rem;
+    font-size: 0.3rem;
+    font-family: PingFangSC-Regular;
+    text-align: center;
+    border-bottom: 1px solid #E6E6E6;
+}
+.detail_content .heaer_help .name{
+    color: #FDD400;
+}
 /*详情共同部分*/
 .detail_content .same {
     /*width: 100%;*/
@@ -78,6 +130,7 @@
     height: 0.45rem;
     line-height: 0.45rem;
     margin-bottom: 0.14rem;
+    display: inline-block;
 }
 
 /*gender、age*/
@@ -97,23 +150,25 @@
     line-height: 0.3rem;
     padding: 0.02rem 0.12rem;
 }
-
+.detail_content .content_header .header_person .create_date{
+    display: inline-block;
+    float: right;
+}
 /*gender-images，age 0.38*/
 .detail_content .content_header .header_person .gender_age {
     width: 0.72rem;
     height: 0.34rem; /*ok*/
-    line-height: 0.34rem;
+    line-height: 0.48rem;
     padding: 0.02rem 0.04rem; /*ok*/
     background-color: #56d8da;
     text-align: center;
+    position: relative;
 }
 
 /*gender-images*/
 .detail_content .content_header .header_person .gender_age .tag_gender {
     height: 84%;
-    display: inline-block;
     float: left;
-    vertical-align: middle;
     margin-left: 0.04rem;
     margin-top: 0.02rem;
 }
@@ -121,14 +176,18 @@
 /*age*/
 .detail_content .content_header .header_person .gender_age .tag_age {
     color: #ffffff;
-    /*padding-left: 2px;*/
+    display: inline-block;
+    position: absolute;
+    right: 0.08rem;
+    top: -0.06rem;
 }
 
 /*标题*/
 .detail_content .aim {
     height: 0.68rem;
-    border-bottom: 1px solid #E6E6E6;
-    border-top: 1px solid #E6E6E6;
+    padding-left: 0.5rem;
+    /*border-bottom: 1px solid #E6E6E6;*/
+    /*border-top: 1px solid #E6E6E6;*/
 }
 
 .detail_content .aim .aim_img {
@@ -153,6 +212,7 @@
 /*detail*/
 .detail_content .content {
     width: 6.3rem;
+    padding: 0 0.3rem;
     /*min-height: 5.6rem;*/
 }
 
@@ -214,12 +274,26 @@
     position: relative;
     bottom: 0;
     border-top: 1px solid #E6E6E6;
+    text-align: left;
+}
+.detail_content .content_footer p{
+    display: inline-block;
+    font-family: PingFangSC-Regular;
+    font-size: 0.22rem;
+    color: #666666;
+    background: #FBF3CD;
+    border: 1px solid #FCD204;
+    border-radius: 16px;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    margin-right: 0.4rem;
+    padding: 0.02rem 0.14rem;
 }
 
-.detail_content .content_footer .footer_img {
+/*.detail_content .content_footer .footer_img {
     width: 0.24rem;
     vertical-align: middle;
-    /*height: 0.22rem;*/
+    !*height: 0.22rem;*!
 }
 
 .detail_content .content_footer .footer_font {
@@ -240,19 +314,19 @@
 
 .detail_content .content_footer .footer_right {
     float: right;
-}
+}*/
 
 /*关系脉络*/
-.detail_footer {
+/*.detail_footer {
     position: relative;
     top: 8rem;
     left: 0;
     padding: 0.3rem 0.6rem;
     text-align: left;
-}
+}*/
 /*爱心公益*/
-.detail_footer .love{
-    /*width: 5.38rem;*/
+/*.detail_footer .love{
+    !*width: 5.38rem;*!
     height: 0.28rem;
     line-height:0.28rem;
     text-align: center;
@@ -261,7 +335,7 @@
     display: inline-block;
     width: 0.28rem;
     height: 0.28rem;
-    vertical-align: sub; /*ok*/
+    vertical-align: sub; !*ok*!
 }
 .detail_footer .love span{
     font-family: PingFangSC-Regular;
@@ -271,10 +345,10 @@
 }
 .detail_footer .love span .yellow{
     color: #f6d744;
-    /*font-weight: bolder;*/
-}
+    !*font-weight: bolder;*!
+}*/
 /*关系脉络*/
-.detail_footer p {
+/*.detail_footer p {
     font-size: 0.28rem;
     color: #666666;
     line-height: 0.4rem;
@@ -291,9 +365,9 @@
     height: 0.94rem;
     text-align: center;
     position: relative;
-    /*border-radius: 0.18rem;*/
-    /*overflow: hidden;*/
-    /*line-height:0.84rem;*/
+    !*border-radius: 0.18rem;*!
+    !*overflow: hidden;*!
+    !*line-height:0.84rem;*!
 }
 
 .detail_footer ul .person img {
@@ -313,7 +387,7 @@
     color: #999999;
     height: 0.2rem;
     line-height: 0.2rem;
-}
+}*/
 
 /*箭头*/
 /*.detail_footer ul .arrow {
@@ -341,32 +415,93 @@
 }
 */
 
-.help_btn {
-    /*position: fixed;*/
-    /*bottom: 1rem;*/
-    /*left: 1.4rem;*/
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: url("../images/help_btn.png") no-repeat;
-    background-size: 100%;
-    width: 4.54rem;
-    height: 0.94rem;
 
-    /*width: 4.53rem;*/
-    /*height: 0.94rem;*/
-    /*line-height: 0.94rem;*/
-    text-align: center;
-    margin: 0.5rem 1rem;
-    /*background-image: linear-gradient(90deg, #FCD202 17%, #FCB91E 100%);*/
-    /*box-shadow: 0.03rem 0.07rem 0.26rem 0 rgba(153, 153, 153, 0.50);*/
-    /*border-radius: 0.55rem;*/
-    /*font-family: PingFangSC-Regular;*/
-    /*font-size: 0.38rem;*/
-    /*color: #333333;*/
-    /*letter-spacing: 0.6px;*/
+.detail_footer{
+    margin: 0 auto;
+    width: 6.9rem;
+    position: relative;
+    font-family: PingFangSC-Regular;
+    font-size: 0.3rem;
+    color: #2A2A2A;
 }
-
+.detail_footer .red_bag{
+    height: 1.42rem;
+    line-height: 1.42rem;
+    background-image: url("../images/dialog.png");
+    background-size: 100% 100%;
+    text-align: left;
+    padding: 0.22rem;
+}
+.detail_footer .red_bag img{
+    width: 0.76rem;
+    height: 0.56rem;
+    margin-right: 0.22rem;
+}
+.detail_footer .red_bag p{
+    display: inline-block;
+    position: absolute;
+    top: -0.02rem;
+}
+.detail_footer .btn div{
+    display: inline-block;
+    margin: 0.36rem auto;
+}
+.detail_footer .btn .red_btn {
+    float: left;
+    background: url("../images/redbag_btn.png") no-repeat;
+    background-size: 100% 100%;
+    width: 3rem;
+    height: 0.94rem;
+    text-align: center;
+    margin-right: 0.36rem;
+}
+.detail_footer .btn .help_btn {
+    background: url("../images/help_btn.png") no-repeat;
+    background-size: 100% 100%;
+    width: 3rem;
+    height: 0.94rem;
+    text-align: center;
+    /*margin: 0.5rem 1rem;*/
+}
+/*列表部分*/
+.detail_footer .list{
+    width: 6.9rem;
+    height: 4.06rem;
+    margin: 0.36rem auto;
+    font-family: PingFangSC-Regular;
+    font-size: 0.26rem;
+    color: #666666;
+}
+.detail_footer .list .list_detail{
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 0.3rem;
+}
+.detail_footer .list .list_detail .item{
+    text-align: left;
+    width: 100%;
+    /*height: 0.54rem;*/
+    line-height: 0.54rem;
+}
+.detail_footer .list .list_detail .item span{
+    vertical-align:middle;
+}
+.detail_footer .list .list_detail .item img{
+    width: 0.54rem;
+    height: 0.54rem;
+    margin-right: 0.24rem;
+    vertical-align:middle;
+}
+.detail_footer .list .list_detail .item .money{
+    float: right;
+    display: inline-block;
+}
+.detail_footer .list .total{
+    padding-left: 3.09rem;
+    /*padding-bottom: 0.3rem;*/
+    padding-top: 0.3rem;
+    padding-right: 0.3rem;
+}
 /*右箭头*/
 .right {
     width: 0.2rem;
