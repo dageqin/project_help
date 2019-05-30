@@ -95,8 +95,8 @@
                     <!--<img id="imageOpen" class="open_btn" src="images/open_btn.png" alt="open">-->
                 </div>
                 <div class="same content_footer">
-                    <p>有偿</p>
-                    <p>帮转红包</p>
+                    <p id="pay">有偿</p>
+                    <p id="redbag">帮转红包</p>
                    <!-- <div class="footer_left">
                         <img class="footer_img city_img" src="images/btn_city.png" alt="city">
                         &lt;!&ndash;发布城市&ndash;&gt;
@@ -137,37 +137,19 @@
                 </div>
                 <div class="list">
                     <div class="list_detail">
+                        <% for (var i = 0; i < dataList.list.length; i++) { %>
+                        <% var item = dataList.list[i] %>
                         <div class="item">
-                            <img src="images/header_photo.png" alt="头像">
-                            <span>刘彤彤</span>
+                            <img src="<%=item.usersHead%>" alt="头像">
+                            <span><%=item.usersName%></span>
                             <span class="money">
-                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
+                                领到<span style="color: #FDD400;padding-left: 0.04rem;"><%=item.money%></span>元
                             </span>
                         </div>
-                        <div class="item">
-                            <img src="images/header_photo.png" alt="头像">
-                            <span>刘彤彤</span>
-                            <span class="money">
-                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
-                            </span>
-                        </div>
-                        <div class="item">
-                            <img src="images/header_photo.png" alt="头像">
-                            <span>刘彤彤</span>
-                            <span class="money">
-                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
-                            </span>
-                        </div>
-                        <div class="item">
-                            <img src="images/header_photo.png" alt="头像">
-                            <span>刘彤彤</span>
-                            <span class="money">
-                                领到<span style="color: #FDD400;padding-left: 0.04rem;">1.02</span>元
-                            </span>
-                        </div>
+                        <% } %>
                     </div>
                     <div class="total">
-                        已有<span style="color: #FDD400;padding-left: 0.04rem;">1232</span>人领导朋友的红包
+                        已有<span style="color: #FDD400;padding-left: 0.04rem;"><%=dataList.listSize%></span>人领导朋友的红包
                     </div>
                 </div>
             </footer>

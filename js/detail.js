@@ -1,4 +1,4 @@
-var res = {
+/*var res = {
     "code": 200,
     "desc": null,
     "data": {
@@ -32,16 +32,45 @@ var res = {
         "helpUserName": "张三",
         "pstate": false, //是否公益
         "followSize": 10, //公益次数
+        "itisRedMoney": true, //显示红包
+        "itisPais":1,//是否有偿 1是 2否
+        "listSize:":30,
+        "list":[{
+            usersHead:'./images/girl.jpg',
+            usersName:'kiki',
+            money:0.02
+        },{
+            usersHead:'./images/girl.jpg',
+            usersName:'lili',
+            money:0.01
+        },{
+            usersHead:'./images/girl.jpg',
+            usersName:'kiki',
+            money:0.02
+        },{
+            usersHead:'./images/girl.jpg',
+            usersName:'lili',
+            money:0.01
+        },{
+            usersHead:'./images/girl.jpg',
+            usersName:'kiki',
+            money:0.02
+        },{
+            usersHead:'./images/girl.jpg',
+            usersName:'lili',
+            money:0.01
+        }]
     }
 };
-renderDOM(res);
+renderDOM(res);*/
 
 
-function renderDOM(res, helpId) {
+function renderDOM(res, helpId, publishId) {
     var dataList = res && res.data;
     var content = dataList.publishContent;
     var contentLen = content.length;
     var imgLen = dataList.images && dataList.images.length;
+    var listLen = dataList.list && dataList.list.length;
     var personLable = dataList.personalLabel;
     //多个个人标签显示一个 数组
     if(personLable.length > 1){
@@ -87,6 +116,8 @@ function renderDOM(res, helpId) {
     }
     //渲染男女图标
     var gender = dataList.gender;
+    var isPais = dataList.itisPais;
+    var isRedbag = dataList.itisRedMoney;
     switch (gender) {
         case 1: //男
             dataList.gender = './images/nan.png';
@@ -101,6 +132,10 @@ function renderDOM(res, helpId) {
     if(imgLen > 9){
         dataList.images.splice(9);
     }
+    //最多显示4个人
+    if(listLen > 4){
+        dataList.list.splice(4);
+    }
     var template = $('#matchTemplate').html();
     var result = ejs.render(template, {dataList: dataList});
     $(".main").html(result);
@@ -113,6 +148,8 @@ function renderDOM(res, helpId) {
     var $footer = $('#footer');
     var $contentImg = $('#contentImg');
     var $gender = $('#gender');
+    var $pay = $("#pay");
+    var $redbag = $("#redbag");
     var bShow = true;
     var imgShow = true;
 
@@ -120,6 +157,18 @@ function renderDOM(res, helpId) {
         $gender.css('background-color','#56d8da');
     }else if(gender == 2){
         $gender.css('background-color','#fb8e8e');
+    }
+    //显示有偿
+    if(isPais == 1){
+        $pay.show();
+    }else {
+        $pay.hide();
+    }
+    //显示帮转红包
+    if(isRedbag){
+        $redbag.show();
+    }else {
+        $redbag.hide();
     }
     var contentHeight = $content.height();
     console.log(contentHeight);
@@ -193,7 +242,7 @@ function renderDOM(res, helpId) {
     });
     //立即帮他
     $("#helpBtn").click(function () {
-        window.location = './login.html?helpUserId=' + helpId;
+        window.location = './login.html?helpUserId=' + helpId + '&publishId='+publishId;
     });
 }
 
@@ -221,7 +270,7 @@ $(function () {
                 alert(res.desc);
                 return;
             }
-            renderDOM(res, reqData.helpUserId);
+            renderDOM(res, reqData.helpUserId, reqData.publishId);
         }
     });
 });

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
-    <title>注册</title>
-    <link rel="stylesheet" href="css/login.css">
+    <title>领取红包</title>
+    <link rel="stylesheet" href="css/redbag.css">
 </head>
 <script>
     +function () {
@@ -36,7 +36,6 @@
             <div>
                 <i class="username"></i>
                 <input id="userName" class="num" type="text" name="userName" placeholder="建议输入真实姓名，便于好友相认">
-                <input id="publishId" type="text" name="publishId" style="display: none;">
             </div>
 
             <div>
@@ -46,16 +45,31 @@
                 <span class="get_gode" id="getCode">获取验证码</span>
             </div>
 
-            <button type="button" id="submit">前往帮忙</button>
+            <button type="button" id="submit">领取红包</button>
         </form>
     </section>
     <footer class="login_footer">
         真正能帮到你的好友互助平台
     </footer>
+
+    <!--红包弹窗-->
+    <section class="redbag_area" id="redbag_area">
+        <div class="bg"></div>
+        <div class="redbag">
+            <img src="images/redbag.png" alt="红包">
+            <p id="first">
+                <p class="red" style="margin-bottom: 0.1rem;">恭喜您！</p>
+                <p>
+                    领取红包<span id="money" class="red"></span> 元
+                </p>
+            </p>
+            <p id="repeat" class="red">红包已领取</p>
+        </div>
+    </section>
 </main>
 </body>
 <script src="js/lib/zepto.min.js"></script>
 <script src="js/lib/ejs.min.js"></script>
 <script src="js/public.js"></script>
-<script src="js/login.js"></script>
+<script src="js/redbag.js"></script>
 </html>

@@ -10,16 +10,12 @@ function setTime() {
         $getCode.css('disabled', false);
         $getCode.css('background', '#FCD204');
         $getCode.text('获取验证码');
-        // $submit.css('background', '#FCD204');
-        // $submit.css('disabled', false);
         countdown = 60;
         return false;
     } else {
         $getCode.css('background', '#e6e6e6');
         $getCode.css('disabled', true);
         $getCode.text("重新发送(" + countdown + ")");
-        // $submit.css('background', '#e6e6e6');
-        // $submit.css('disabled', true);
         countdown--;
     }
     setTimeout(function() {
@@ -59,15 +55,13 @@ $getCode.on('tap', function () {
     })
 });
 
-/*前往帮忙*/
+/*领取红包*/
 var isSubmit = false;
 $submit.on('tap', function (e) {
     e.preventDefault();//阻止form表单默认提交
     var reqData = window.location.href.queryURLParameter();
     var helpUserId = reqData.helpUserId;
-    var publishId = reqData.publishId;
     $("#helpUserId").val(helpUserId);
-    $("#publishId").val(publishId);
     $submit.css('background', '#e6e6e6');
     if(!isSubmit){
         isSubmit = true;
@@ -91,10 +85,21 @@ $submit.on('tap', function (e) {
                     $submit.css('background', '#FCD204');
                     return;
                 }else {
-                    alert(res.desc);
+                    if(res.data == '0.00'){
+                        $('#repeat').css('display','block');
+                        $('#first').css('display','none');
+                    }else{
+                        $('#repeat').css('display','none');
+                        $('#first').css('display','block');
+                        $("#money").html('1.02');
+                    }
+                    $('#redbag_area').css('display','block');
+                    setTimeout(function(){
+                        //验证成功，启动app，否则跳到下载页面
+                        window.location.href = './download.html';
+                    },5000);
                 }
-                //验证成功，启动app，否则跳到下载页面
-                window.location.href = './download.html';
+
             },
             error: function (err) {
                 alert(err);
