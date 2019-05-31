@@ -30,6 +30,7 @@
         <div class="swiper-slide">
             <header class="detail_header">
                 <img class="header_img" src="images/detail_header.png" alt="help_img">
+                <img class="superman" src="images/superman.png" alt="素小友">
                 <div class="header_logo">
                     <div class="logo_top">
                         <img class="logo" src="images/logo.png" alt="logo">
@@ -47,7 +48,7 @@
                 </div>
             </header>
             <section id="content" class="detail_content">
-                <div class="heaer_help">
+                <div class="header_help">
                     <span class="name"><%=dataList.helpUserName%></span>
                     <span>：“这是我朋友，有人能帮帮他吗？”</span>
                 </div>
@@ -69,9 +70,13 @@
                         <!--<span class="tag tag_desc job">设计师</span>-->
                         <!--<span class="tag tag_desc evaluate">讲义气</span>-->
                         <p>
-                        <span class="tag tag_desc city"><%=dataList.publishCity%></span>
-                        <span class="tag tag_desc job"><%=dataList.industry%></span>
-                        <span class="tag tag_desc evaluate"><%=dataList.personalLabel%></span>
+                            <img class="footer_img" src="images/btn_city.png" alt="city">
+                            <span class="footer_font"><%= dataList.publishCity%></span>
+                            <img class="footer_img" src="images/job.png" alt="job">
+                            <span class="footer_font"><%= dataList.industry%></span>
+                        <!--<span class="tag tag_desc city"><%=dataList.publishCity%></span>-->
+                        <!--<span class="tag tag_desc job"><%=dataList.industry%></span>-->
+                        <!--<span class="tag tag_desc evaluate"><%=dataList.personalLabel%></span>-->
                         </p>
                     </div>
                 </div>
@@ -82,9 +87,9 @@
                     <span class="aim_title"><%=dataList.publishTitle%></span>
                 </div>
                 <div class="content">
-                    <p class="content_detail" id="contentDetail" style="white-space:pre-line">
+                    <div class="content_detail" id="contentDetail" style="white-space:pre-line">
                         <%=dataList.publishContent%>
-                    </p>
+                    </div>
                     <!--<span class="all_btn" id="allBtn">全文</span>-->
                     <ul class="content_img" id="contentImg">
                         <% for (var i = 0; i < dataList.images.length; i++) { %>
@@ -127,7 +132,7 @@
                 <div class="red_bag">
                     <img src="images/redbag.png" alt="红包">
                     <p class="red_text">
-                        <span style="color: #FDD400"><%=dataList.helpUserName%></span>
+                        <span style="color: #363B63;"><%=dataList.helpUserName%></span>
                         <span>送了你一个帮转红包，快来领呀！</span>
                     </p>
                 </div>
@@ -149,7 +154,7 @@
                         <% } %>
                     </div>
                     <div class="total">
-                        已有<span style="color: #FDD400;padding-left: 0.04rem;"><%=dataList.listSize%></span>人领导朋友的红包
+                        已有<span style="color: #FDD400;padding-left: 0.04rem;"><%=dataList.listSize%></span>人领到朋友的红包
                     </div>
                 </div>
             </footer>

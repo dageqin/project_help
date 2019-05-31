@@ -85,13 +85,13 @@ $submit.on('tap', function (e) {
                     $submit.css('background', '#FCD204');
                     return;
                 }else {
-                    if(res.data == '0.00'){
+                    if(res.data == '0.0'){
                         $('#repeat').css('display','block');
                         $('#first').css('display','none');
                     }else{
                         $('#repeat').css('display','none');
                         $('#first').css('display','block');
-                        $("#money").html('1.02');
+                        $("#money").html(res.data);
                     }
                     $('#redbag_area').css('display','block');
                     setTimeout(function(){
@@ -99,7 +99,6 @@ $submit.on('tap', function (e) {
                         window.location.href = './download.html';
                     },5000);
                 }
-
             },
             error: function (err) {
                 alert(err);
@@ -131,19 +130,28 @@ $phone.on('keyup', function(e){
             contentType: 'application/json',
             success: function (res) {
                 console.log(res);
-                if(!res) {
+                if(!res || !res.users || !res.users.name) {
                     $userName.val('');
-                    $userName.attr('disabled', false);
+                    $userName.removeAttr('readonly');
                     return;
                 }
                 var name = res && res.users && res.users.name;
                 $userName.val(name);
-                $userName.attr('disabled', true);
+                $userName.attr('readonly', true);
             },
             error: function (err) {
                 alert(err);
             }
         })
+    }
+});
+
+$(function(){
+    var reqData = window.location.href.queryURLParameter();
+    console.log(reqData);
+    var helpUserName = decodeURI(reqData.helpUserName);
+    if(helpUserName){
+        $("#helpUserName").html(helpUserName);
     }
 });
 

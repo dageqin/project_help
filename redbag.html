@@ -28,22 +28,22 @@
         <img class="header_font" src="images/btn_suyou.png" alt="素友">
     </header>
     <section class="login_content">
-        <form id="formInfo" action="" method="get" autocomplete="on" target="_blank">
+        <form id="formInfo" action="" method="get" autocomplete="on" target="_blank" onsubmit="document.charset='utf-8'">
             <div>
                 <i class="phone"></i>
                 <input id="phoneNum" oninput="if(value.length>11)value=value.slice(0,11)" class="num" type="number" name="phoneNumber" placeholder="请输入手机号">
             </div>
-            <div>
-                <i class="username"></i>
-                <input id="userName" class="num" type="text" name="userName" placeholder="建议输入真实姓名，便于好友相认">
-            </div>
-
             <div>
                 <i class="vertify"></i>
                 <input id="vertifyNum" class="num" type="number" name="smsCode" placeholder="请输入验证码">
                 <input id="helpUserId" type="text" name="helpUserId" style="display: none;">
                 <span class="get_gode" id="getCode">获取验证码</span>
             </div>
+            <div>
+                <i class="username"></i>
+                <input id="userName" class="num" type="text" name="userName" placeholder="建议输入真实姓名，便于好友相认">
+            </div>
+
 
             <button type="button" id="submit">领取红包</button>
         </form>
@@ -56,14 +56,26 @@
     <section class="redbag_area" id="redbag_area">
         <div class="bg"></div>
         <div class="redbag">
-            <img src="images/redbag.png" alt="红包">
-            <p id="first">
-                <p class="red" style="margin-bottom: 0.1rem;">恭喜您！</p>
-                <p>
-                    领取红包<span id="money" class="red"></span> 元
-                </p>
-            </p>
-            <p id="repeat" class="red">红包已领取</p>
+            <!--<img class="close" src="images/btn_close.png" alt="关闭">-->
+            <img class="redbag_bg" src="images/bg_redbag.png" alt="红包">
+            <div class="detail_info">
+                恭喜您获得<span style="color:#E2AA1B" id="helpUserName"></span>送您的<span style="color:#E2AA1B;padding: 0 0.04rem;">1</span>个帮转红包，请去素友APP“我的-卡券包”中查看或使用
+            </div>
+            <img class="card" src="images/card.png" alt="card">
+            <div class="money">
+                <div id="first">
+                <span>￥</span>
+                <sapn id="money"></sapn>
+                </div>
+                <div id="repeat" class="red">红包已领取</div>
+            </div>
+            <!--<div id="first">-->
+                <!--<div class="red" style="margin-bottom: 0.1rem;">恭喜您！</div>-->
+                <!--<div>-->
+                    <!--领取红包<span id="money" class="red"></span> 元-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div id="repeat" class="red">红包已领取</div>-->
         </div>
     </section>
 </main>

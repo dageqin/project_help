@@ -25,10 +25,19 @@
     width: 100%;
     height: 100%;
 }
+/*素小友*/
+.detail_header .superman{
+    position: absolute;
+    top:3.28rem;
+    left: 0;
+    width: 1.93rem;
+    height: 2.13rem;
+}
+
 .detail_header .header_logo{
     position: absolute;
-    top: 1.1rem;
-    left: 1.34rem;
+    top: 0.5rem;
+    left: 1.94rem;
 }
 .detail_header .header_logo div{
     margin-bottom: 0.24rem;
@@ -36,36 +45,40 @@
 .detail_header .header_logo .logo_top{
     height: 0.88rem;
     line-height: 0.88rem;
+    margin-bottom: 0.3rem;
 }
 .detail_header .header_logo .logo_top img{
     display: inline-block;
     vertical-align: middle;
 }
 .detail_header .header_logo .logo_top .logo{
-    width: 0.88rem;
-    height: 0.88rem;
+    width: 0.9rem;
+    height: 0.9rem;
 }
 .detail_header .header_logo .logo_top .suyou{
     width: 1.1rem;
     height: 0.5rem;
 }
 .detail_header .header_logo .world{
-    margin-bottom: 0.24rem;
+    margin-bottom: 0.4rem;
 }
 .detail_header .header_logo .world img{
-    width: 4.6rem;
-    height: 0.52rem;
+    width: 4rem;
+    height: 0.5rem;
 }
 .detail_header .header_logo .friend{
     margin-bottom: 0.2rem;
 }
 .detail_header .header_logo .friend img{
-    width: 3.88rem;
-    height: 0.65rem;
+    width: 3.94rem;
+    height: 0.64rem;
+}
+.detail_header .header_logo .you{
+    margin-left: 0.6rem;
 }
 .detail_header .header_logo .you img{
-    width: 3.72rem;
-    height: 0.5rem;
+    width: 3.94rem;
+    height: 0.52rem;
 }
 /*详情内容部分*/
 .detail_content {
@@ -78,16 +91,17 @@
     box-shadow: 2px 2px 19px 0 rgba(153, 153, 153, 0.50);
     border-radius: 16px;
 }
-.detail_content .heaer_help{
-    width: 100%;
+.detail_content .header_help{
+    /*width: 100%;*/
     padding: 0.2rem;
     font-size: 0.3rem;
     font-family: PingFangSC-Regular;
     text-align: center;
     border-bottom: 1px solid #E6E6E6;
+    color: #333333;
 }
-.detail_content .heaer_help .name{
-    color: #FDD400;
+.detail_content .header_help .name{
+    color: #363B63;;
 }
 /*详情共同部分*/
 .detail_content .same {
@@ -98,19 +112,19 @@
 
 /*详情内容头部*/
 .detail_content .content_header {
-    height: 1.08rem;
+    /*height: 1.08rem;*/
+    /*margin-bottom: 0.24rem;*/
 }
 
 /*详情内容头部-个人头像*/
 .detail_content .content_header .header_photo {
     display: inline-block;
     float: left;
-    width: 1.08rem;
+    width: 0.68rem;
     height: 100%;
     margin-right: 0.1rem;
     border-radius: 50%;
     overflow: hidden;
-    /*height: 1.08rem;*/
 }
 
 .detail_content .content_header .header_photo img {
@@ -123,13 +137,24 @@
     /*padding: 0.1rem;*/
     text-align: left;
 }
-
+.detail_content .content_header .header_person .footer_img {
+    width: 0.18rem;
+    height: 0.2rem;
+    vertical-align: middle;
+}
+.detail_content .content_header .header_person .footer_font {
+    font-size: 0.22rem;
+    vertical-align: middle;
+    color: #666666;
+    padding-right: 0.2rem;
+}
 .detail_content .content_header .header_person .person_name {
-    font-size: 0.32rem;
-    color: #333333;
+    font-size: 0.26rem;
+    font-weight: 600;
+    color: #363B63;;
     height: 0.45rem;
     line-height: 0.45rem;
-    margin-bottom: 0.14rem;
+    /*margin-bottom: 0.14rem;*/
     display: inline-block;
 }
 
@@ -139,6 +164,8 @@
     border-radius: 0.2rem;
     text-align: center;
     vertical-align: sub; /*ok*/
+    color: #666666;
+    font-size: 0.22rem;
 }
 
 /*description 0.34*/
@@ -153,6 +180,8 @@
 .detail_content .content_header .header_person .create_date{
     display: inline-block;
     float: right;
+    color: #666666;
+    font-size: 0.22rem;
 }
 /*gender-images，age 0.38*/
 .detail_content .content_header .header_person .gender_age {
@@ -163,6 +192,7 @@
     background-color: #56d8da;
     text-align: center;
     position: relative;
+    font-size: 0.2rem;
 }
 
 /*gender-images*/
@@ -184,27 +214,25 @@
 
 /*标题*/
 .detail_content .aim {
-    height: 0.68rem;
+    /*height: 0.45rem;*/
     padding-left: 0.5rem;
+    margin-bottom: 0.08rem;
     /*border-bottom: 1px solid #E6E6E6;*/
     /*border-top: 1px solid #E6E6E6;*/
 }
 
 .detail_content .aim .aim_img {
-    /*width: 0.35rem;*/
-    /*height: 0.68rem;*/
-    height: 100%;
+    /*width: 0.17rem;*/
+    height: 0.34rem;
     float: left;
 }
 
 .detail_content .aim .aim_title {
     font-weight: bolder; /*ok*/
     font-family: PingFangSC-Medium;
-    font-size: 0.36rem;
+    font-size: 0.32rem;
     color: #333333;
     padding-left: 0.26rem;
-    height: 0.68rem;
-    line-height: 0.68rem;
     display: inline-block;
     float: left;
 }
@@ -213,26 +241,23 @@
 .detail_content .content {
     width: 6.3rem;
     padding: 0 0.3rem;
-    /*min-height: 5.6rem;*/
+    font-size: 0.3rem;
 }
 
 .detail_content .content .content_detail {
     padding: 0 0.2rem;
     font-family: PingFangSC-Light;
-    font-size: 0.3rem;
     color: #333333;
     line-height: 0.46rem;
     text-align: left;
 }
 
 /*全文*/
-.detail_content .content .all_btn {
-    display: inline-block;
-    float: right;
-    color: #f6d744;
-    /*margin-top: -0.4rem;*/
-    font-size: 0.3rem;
-}
+/*.detail_content .content .all_btn {*/
+    /*display: inline-block;*/
+    /*float: right;*/
+    /*color: #f6d744;*/
+/*}*/
 
 .detail_content .content ul {
     /*width: 100%;*/
@@ -425,26 +450,28 @@
     color: #2A2A2A;
 }
 .detail_footer .red_bag{
+    font-size: 0.28rem;
     height: 1.42rem;
     line-height: 1.42rem;
     background-image: url("../images/dialog.png");
     background-size: 100% 100%;
     text-align: left;
-    padding: 0.22rem;
+    padding: 0.3rem 0.2rem;
 }
 .detail_footer .red_bag img{
     width: 0.76rem;
     height: 0.56rem;
     margin-right: 0.22rem;
+    vertical-align: middle;
 }
 .detail_footer .red_bag p{
     display: inline-block;
     position: absolute;
-    top: -0.02rem;
+    vertical-align: middle;
 }
 .detail_footer .btn div{
     display: inline-block;
-    margin: 0.36rem auto;
+    margin: 0.3rem auto;
 }
 .detail_footer .btn .red_btn {
     float: left;
@@ -453,7 +480,7 @@
     width: 3rem;
     height: 0.94rem;
     text-align: center;
-    margin-right: 0.36rem;
+    margin-right: 0.3rem;
 }
 .detail_footer .btn .help_btn {
     background: url("../images/help_btn.png") no-repeat;
@@ -471,17 +498,19 @@
     font-family: PingFangSC-Regular;
     font-size: 0.26rem;
     color: #666666;
+    background: #FFFFFF;
+    border-radius: 10px;
 }
 .detail_footer .list .list_detail{
     border-top: 1px solid #E6E6E6;
     border-bottom: 1px solid #E6E6E6;
-    padding: 0.3rem;
+    padding: 0.2rem 0.3rem 0 0.3rem;
 }
 .detail_footer .list .list_detail .item{
     text-align: left;
     width: 100%;
-    /*height: 0.54rem;*/
     line-height: 0.54rem;
+    margin-bottom: 0.2rem;
 }
 .detail_footer .list .list_detail .item span{
     vertical-align:middle;
@@ -498,10 +527,11 @@
     display: inline-block;
 }
 .detail_footer .list .total{
-    padding-left: 3.09rem;
+    padding-left: 3.4rem;
     /*padding-bottom: 0.3rem;*/
     padding-top: 0.3rem;
-    padding-right: 0.3rem;
+    /*padding-right: 0.3rem;*/
+    font-size: 0.28rem;
 }
 /*右箭头*/
 .right {

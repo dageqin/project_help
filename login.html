@@ -28,22 +28,21 @@
         <img class="header_font" src="images/btn_suyou.png" alt="素友">
     </header>
     <section class="login_content">
-        <form id="formInfo" action="" method="get" autocomplete="on" target="_blank">
+        <form id="formInfo" action="" method="get" autocomplete="on" target="_blank" onsubmit="document.charset='utf-8'">
             <div>
                 <i class="phone"></i>
                 <input id="phoneNum" oninput="if(value.length>11)value=value.slice(0,11)" class="num" type="number" name="phoneNumber" placeholder="请输入手机号">
             </div>
             <div>
-                <i class="username"></i>
-                <input id="userName" class="num" type="text" name="userName" placeholder="建议输入真实姓名，便于好友相认">
-                <input id="publishId" type="text" name="publishId" style="display: none;">
-            </div>
-
-            <div>
                 <i class="vertify"></i>
                 <input id="vertifyNum" class="num" type="number" name="smsCode" placeholder="请输入验证码">
                 <input id="helpUserId" type="text" name="helpUserId" style="display: none;">
                 <span class="get_gode" id="getCode">获取验证码</span>
+            </div>
+            <div>
+                <i class="username"></i>
+                <input id="userName" class="num" type="text" name="userName" placeholder="建议输入真实姓名，便于好友相认">
+                <input id="publishId" type="text" name="publishId" style="display: none;">
             </div>
 
             <button type="button" id="submit">前往帮忙</button>

@@ -1,4 +1,4 @@
-/*var res = {
+var res = {
     "code": 200,
     "desc": null,
     "data": {
@@ -29,7 +29,7 @@
         "gender": 2,
         "publishTypeIcon": 9,
         "helpUserHead": "./images/girl.jpg",
-        "helpUserName": "张三",
+        "helpUserName": "董海宁",
         "pstate": false, //是否公益
         "followSize": 10, //公益次数
         "itisRedMoney": true, //显示红包
@@ -62,7 +62,7 @@
         }]
     }
 };
-renderDOM(res);*/
+renderDOM(res);
 
 
 function renderDOM(res, helpId, publishId) {
@@ -118,6 +118,11 @@ function renderDOM(res, helpId, publishId) {
     var gender = dataList.gender;
     var isPais = dataList.itisPais;
     var isRedbag = dataList.itisRedMoney;
+    var helpUserName = dataList.helpUserName;
+    //名称取前三个
+    if(helpUserName.length > 3){
+        dataList.helpUserName.splice(3);
+    }
     switch (gender) {
         case 1: //男
             dataList.gender = './images/nan.png';
@@ -136,6 +141,7 @@ function renderDOM(res, helpId, publishId) {
     if(listLen > 4){
         dataList.list.splice(4);
     }
+
     var template = $('#matchTemplate').html();
     var result = ejs.render(template, {dataList: dataList});
     $(".main").html(result);
@@ -239,6 +245,10 @@ function renderDOM(res, helpId, publishId) {
         if (item.innerText == '') {
             $('.header_person')[0].removeChild(item);
         }
+    });
+    //领取红包
+    $("#redBtn").click(function () {
+        window.location = './redbag.html?helpUserName=' + helpUserName;
     });
     //立即帮他
     $("#helpBtn").click(function () {

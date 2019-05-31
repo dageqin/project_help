@@ -126,14 +126,14 @@ $phone.on('keyup', function(e){
             contentType: 'application/json',
             success: function (res) {
                 console.log(res);
-                if(!res) {
+                if(!res || !res.users || !res.users.name) {
                     $userName.val('');
-                    $userName.attr('disabled', false);
+                    $userName.removeAttr('readonly');
                     return;
                 }
                 var name = res && res.users && res.users.name;
                 $userName.val(name);
-                $userName.attr('disabled', true);
+                $userName.attr('readonly', true);
             },
             error: function (err) {
                 alert(err);
