@@ -29,7 +29,7 @@ var res = {
         "gender": 2,
         "publishTypeIcon": 9,
         "helpUserHead": "./images/girl.jpg",
-        "helpUserName": "董海宁",
+        "helpUserName": "kiki ge",
         "pstate": false, //是否公益
         "followSize": 10, //公益次数
         "itisRedMoney": true, //显示红包
@@ -120,9 +120,17 @@ function renderDOM(res, helpId, publishId) {
     var isRedbag = dataList.itisRedMoney;
     var helpUserName = dataList.helpUserName;
     //名称取前三个
-    if(helpUserName.length > 3){
-        dataList.helpUserName.splice(3);
+    //英文,数字,空格
+    if(/^[0-9A-Za-z]+(\s[0-9A-Za-z]+)*$/.test(helpUserName)){
+        if(helpUserName.length > 7){
+            dataList.helpUserName = helpUserName.slice(0, 7);
+        }
+    }else{
+        if(helpUserName.length > 3){
+            dataList.helpUserName = helpUserName.slice(0, 3);
+        }
     }
+
     switch (gender) {
         case 1: //男
             dataList.gender = './images/nan.png';
@@ -247,13 +255,32 @@ function renderDOM(res, helpId, publishId) {
         }
     });
     //领取红包
-    $("#redBtn").click(function () {
+    $("#redBtn").on('tap', function () {
         window.location = './redbag.html?helpUserName=' + helpUserName;
     });
     //立即帮他
-    $("#helpBtn").click(function () {
+    $("#helpBtn").on('tap',function () {
         window.location = './login.html?helpUserId=' + helpId + '&publishId='+publishId;
     });
+    //点击图片放大
+    var imgsObj = $('#contentImg li img');//需要放大的图像
+    console.log(imgsObj);
+    if(imgsObj){
+        $.each(imgsObj,function(){
+            $(this).on('tap',function(){
+                var imgSrc = $(this).attr('src');
+                $("#bigImg").attr('src', imgSrc);
+                $('.showBigImg').css('display', 'block');
+                var h = $("#bigImg").css('height');
+                h = parseInt(h.slice(0,6));
+                var wH = document.body.clientHeight;
+                $("#bigImg").css('top', (wH - h)/2);
+            });
+        })
+    }
+    $('.showBigImg').on('tap', function(){
+        $('.showBigImg').css('display', 'none');
+    })
 }
 
 

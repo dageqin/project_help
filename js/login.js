@@ -26,6 +26,14 @@ function setTime() {
         setTime();
     },1000);
 }
+//usernamer非空判断
+function isNotNull(input) {
+    if(input !='' && input != null && input != undefined){
+        return true;
+    }else{
+        return false;
+    }
+}
 //get Code
 $getCode.on('tap', function () {
     var phoneNum = $('#phoneNum').val();
@@ -63,6 +71,11 @@ $getCode.on('tap', function () {
 var isSubmit = false;
 $submit.on('tap', function (e) {
     e.preventDefault();//阻止form表单默认提交
+    var name = $.trim($("#userName").val());
+    if(!isNotNull(name)){
+        alert('请填写用户名!');
+        return;
+    }
     var reqData = window.location.href.queryURLParameter();
     var helpUserId = reqData.helpUserId;
     var publishId = reqData.publishId;
