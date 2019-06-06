@@ -6,7 +6,7 @@ var res = {
         "commentSize": 0,
         "publishTime": "20小时前",
         "publishTitle": "急寻失踪的河南9岁男童",
-        "images": ["https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767",
+        "images": ["http://yaobangma.com/1_1559637504_iosPush.png",
             "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552204450542336",
             "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767",
             "https://bgm-1258164185.cos.ap-shanghai.myqcloud.com/bgm/1547552248472145767",
@@ -271,15 +271,21 @@ function renderDOM(res, helpId, publishId) {
                 var imgSrc = $(this).attr('src');
                 $("#bigImg").attr('src', imgSrc);
                 $('.showBigImg').css('display', 'block');
+                $('#showMain').css('display', 'none');
                 var h = $("#bigImg").css('height');
                 h = parseInt(h.slice(0,6));
                 var wH = document.body.clientHeight;
-                $("#bigImg").css('top', (wH - h)/2);
+                if(h >= wH){
+                    $("#bigImg").css('margin-top', 0);
+                }else{
+                    $("#bigImg").css('margin-top', (wH - h)/2);
+                }
             });
         })
     }
     $('.showBigImg').on('tap', function(){
         $('.showBigImg').css('display', 'none');
+        $('#showMain').css('display', 'block');
     })
 }
 
